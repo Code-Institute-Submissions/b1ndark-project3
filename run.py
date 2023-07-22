@@ -2,8 +2,11 @@
 import random
 import os
 
+def clean():
+    os.system("clear")
 
 def instructions():
+    clean()
     print("Hello")
 
 
@@ -45,25 +48,29 @@ def dealCard(number):
 
 # Main Menu function where you will be able to select Instructions or start the game
 def mainMenu():
+    clean()
     print("*" * 40)
     print("\n        Welcome to BlackJack Game \n")
     print("*" * 40)
     print("*" * 40)
     print("\nPlease select from the following options:")
-    number_entered = input("\n   1: Instructions.\n   2: Start.\n")
-    # Try/Except to check whether is a number or not
-    try:
-        number_entered = int(number_entered)
-    except:
-        print("Please enter a number")
-        number_entered = int(input("\n   1: Instructions.\n   2: Start.\n"))
-    # If statement to check what option user has selected
-    if number_entered == 1:
-        instructions()
-    elif number_entered == 2:
-        username()
-    else:
-        print("Please enter 1 or 2")    
+
+    while (True):
+        number_entered = input("\n   1: Instructions.\n   2: Start.\n")
+        # Try/Except to check whether is a number or not
+        try:
+            number_entered = int(number_entered)
+        except:
+            print("****Invalid Input Entered****")
+        # If statement to check what option user has selected
+        if number_entered == 1:
+            instructions()
+            break
+        elif number_entered == 2:
+            username()
+            break
+        else:
+            print("Please enter a number from the Selected options\n") 
     
 mainMenu()
 
