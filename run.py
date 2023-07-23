@@ -2,12 +2,49 @@
 import random
 import os
 
+
+# Function to clear screen
 def clean():
     os.system("clear")
 
+
+# Function to show instructions
 def instructions():
     clean()
-    print("Hello")
+    print("*" * 40)
+    print("\n            Instructions! \n")
+    print("*" * 40)
+    print("*" * 40)
+    print("\n  Main goal is to either get 21 points\n\
+    or to be as close as possible\n\
+        \n  If you go above 21 you automatically\n\
+             lose the game\n")
+    print("    The dealer will ask you whether\n\
+        you want to Hit or Stay\n")
+    print("   2 = 2, 3 = 3, 4 = 4, 5 = 5, 6 = 6\n\
+  7 = 7, 8 = 8, 9 = 9, J = 10, Q = 10\n\
+    K = 10, and finally A = 1 or 11\n")
+    print("  The main goal is to beat the dealer!\n")
+    print("*" * 40)
+
+    print("\nPlease select from the following options:")
+    # While loop to loop through the try/except and if statements
+    while (True):
+        number_entered = input("\n   1: Start.\n   2: Exit.\n")
+        # Try/Except to check whether is a number or not
+        try:
+            number_entered = int(number_entered)
+        except:
+            print("\n****Invalid Input Entered****")
+        # If statement to check what option user has selected
+        if number_entered == 1:
+            start()
+            break
+        elif number_entered == 2:
+            mainMenu()
+            break
+        else:
+            print("Please enter a number from the Selected options:")
 
 
 # Variables
@@ -35,9 +72,11 @@ for card_suit in card_suits:
     for rank in ranks:
         cards.append([card_suit, rank])
 
+
 # To shuffle the cards list
 def shuffleCard():
     random.shuffle(cards)
+
 
 def dealCard(number):
     cardsDealt = []
@@ -45,8 +84,9 @@ def dealCard(number):
     return cardsDealt
 
 
+# Main Menu function where you will be able to select Instructions
+# Or start the game
 
-# Main Menu function where you will be able to select Instructions or start the game
 def mainMenu():
     clean()
     print("*" * 40)
@@ -55,13 +95,14 @@ def mainMenu():
     print("*" * 40)
     print("\nPlease select from the following options:")
 
+    # While loop to loop through the try/except and if statements
     while (True):
         number_entered = input("\n   1: Instructions.\n   2: Start.\n")
         # Try/Except to check whether is a number or not
         try:
             number_entered = int(number_entered)
         except:
-            print("****Invalid Input Entered****")
+            print("\n****Invalid Input Entered****")
         # If statement to check what option user has selected
         if number_entered == 1:
             instructions()
@@ -70,7 +111,7 @@ def mainMenu():
             username()
             break
         else:
-            print("Please enter a number from the Selected options\n") 
-    
-mainMenu()
+            print("Please enter a number from the Selected options:")
 
+
+mainMenu()
