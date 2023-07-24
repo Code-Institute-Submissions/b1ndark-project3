@@ -78,7 +78,10 @@ class cardsDeck:
 
     # To shuffle the cards list
     def shuffleCards(self):
-        random.shuffle(self.cards)
+        # When shuffling cards it will check if theres more than one left
+        if len(self.cards) > 1:
+            random.shuffle(self.cards)
+            
 
     # Function to deal cards, once they are dealt they also will be popped
     # And moved to cardsDealt
