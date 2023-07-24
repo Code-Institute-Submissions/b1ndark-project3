@@ -80,13 +80,15 @@ class cardsDeck:
     def shuffleCards(self):
         random.shuffle(self.cards)
 
-
+    # Function to deal cards, once they are dealt they also will be popped
+    # And moved to cardsDealt
     def dealCard(self, number):
         cardsDealt = []
         for i in range(number):
-
-            card = self.cards.pop()
-            cardsDealt.append(card)
+            # To check whether there are any cards left to be removed
+            if len(self.cards) > 0:
+                card = self.cards.pop()
+                cardsDealt.append(card)
         return cardsDealt
 
 deck1 = cardsDeck()
