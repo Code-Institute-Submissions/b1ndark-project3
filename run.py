@@ -29,7 +29,7 @@ def instructions():
 
     print("\nPlease select from the following options:")
     # While loop to loop through the try/except and if statements
-    while (True):
+    while True:
         number_entered = input("\n   1: Start.\n   2: Exit.\n")
         # Try/Except to check whether is a number or not
         try:
@@ -47,46 +47,54 @@ def instructions():
             print("Please enter a number from the Selected options:")
 
 
-# Variables
-value = False
-cards = []
-card_suits = ["clubs", "diamonds", "hearts", "spades"]
-ranks = [
-    {"rank": "2", "value": 2},
-    {"rank": "3", "value": 3},
-    {"rank": "4", "value": 4},
-    {"rank": "5", "value": 5},
-    {"rank": "6", "value": 6},
-    {"rank": "7", "value": 7},
-    {"rank": "8", "value": 8},
-    {"rank": "9", "value": 9},
-    {"rank": "10", "value": 10},
-    {"rank": "J", "value": 10},
-    {"rank": "Q", "value": 10},
-    {"rank": "K", "value": 10},
-    {"rank": "A", "value": 11},
-]
+class cards_deck:
+    def __init__(self):
+        self.cards = []
+        # List of car suits
+        card_suits = ["clubs", "diamonds", "hearts", "spades"]
+        # Dictionary list with card ranks and their respective values 
+        card_ranks = [
+            {"rank": "2", "value": 2},
+            {"rank": "3", "value": 3},
+            {"rank": "4", "value": 4},
+            {"rank": "5", "value": 5},
+            {"rank": "6", "value": 6},
+            {"rank": "7", "value": 7},
+            {"rank": "8", "value": 8},
+            {"rank": "9", "value": 9},
+            {"rank": "10", "value": 10},
+            {"rank": "J", "value": 10},
+            {"rank": "Q", "value": 10},
+            {"rank": "K", "value": 10},
+            {"rank": "A", "value": 11},
+        ]
 
-# Append card_suits and ranks onto cards list 'cards = []'
-for card_suit in card_suits:
-    for rank in ranks:
-        cards.append([card_suit, rank])
-
-
-# To shuffle the cards list
-def shuffleCard():
-    random.shuffle(cards)
+        # Append card_suits and card_ranks onto cards list 'cards = []'
+        for card_suit in card_suits:
+            for rank in card_ranks:
+                self.cards.append([card_suit, rank])
 
 
-def dealCard(number):
-    cardsDealt = []
-    card = cards.pop()
-    return cardsDealt
+    # To shuffle the cards list
+    def shuffleCards(self):
+        random.shuffle(self.cards)
+
+
+    def deal_card(self, number):
+        cards_dealt = []
+        for i in range(number):
+
+            card = self.cards.pop()
+            cards_dealt.append(card)
+        return cards_dealt
+
+deck1 = cards_deck()
+deck1.shuffleCards()
+print(deck1.cards)
 
 
 # Main Menu function where you will be able to select Instructions
 # Or start the game
-
 def mainMenu():
     clean()
     print("*" * 40)
@@ -96,7 +104,7 @@ def mainMenu():
     print("\nPlease select from the following options:")
 
     # While loop to loop through the try/except and if statements
-    while (True):
+    while True:
         number_entered = input("\n   1: Instructions.\n   2: Start.\n")
         # Try/Except to check whether is a number or not
         try:
@@ -114,4 +122,5 @@ def mainMenu():
             print("Please enter a number from the Selected options:")
 
 
-mainMenu()
+# mainMenu()
+
