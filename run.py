@@ -30,30 +30,31 @@ def instructions():
     print("\nPlease select from the following options:")
     # While loop to loop through the try/except and if statements
     while True:
-        number_entered = input("\n   1: Start.\n   2: Exit.\n")
+        numberEntered = input("\n   1: Start.\n   2: Exit.\n")
         # Try/Except to check whether is a number or not
         try:
-            number_entered = int(number_entered)
+            numberEntered = int(numberEntered)
         except:
-            print("\n****Invalid Input Entered****")
+            print("\n      ****Invalid Input Entered****")
         # If statement to check what option user has selected
-        if number_entered == 1:
+        # Loop will break once option is selected
+        if numberEntered == 1:
             start()
             break
-        elif number_entered == 2:
+        elif numberEntered == 2:
             mainMenu()
             break
         else:
-            print("Please enter a number from the Selected options:")
+            print("Please select a number from the options:")
 
 
-class cards_deck:
+class cardsDeck:
     def __init__(self):
         self.cards = []
         # List of car suits
-        card_suits = ["clubs", "diamonds", "hearts", "spades"]
+        cardSuits = ["clubs", "diamonds", "hearts", "spades"]
         # Dictionary list with card ranks and their respective values 
-        card_ranks = [
+        cardRanks = [
             {"rank": "2", "value": 2},
             {"rank": "3", "value": 3},
             {"rank": "4", "value": 4},
@@ -69,10 +70,10 @@ class cards_deck:
             {"rank": "A", "value": 11},
         ]
 
-        # Append card_suits and card_ranks onto cards list 'cards = []'
-        for card_suit in card_suits:
-            for rank in card_ranks:
-                self.cards.append([card_suit, rank])
+        # Append cardSuits and cardRanks onto cards list 'cards = []'
+        for cardSuit in cardSuits:
+            for cardRank in cardRanks:
+                self.cards.append([cardSuit, cardRank])
 
 
     # To shuffle the cards list
@@ -80,15 +81,15 @@ class cards_deck:
         random.shuffle(self.cards)
 
 
-    def deal_card(self, number):
-        cards_dealt = []
+    def dealCard(self, number):
+        cardsDealt = []
         for i in range(number):
 
             card = self.cards.pop()
-            cards_dealt.append(card)
-        return cards_dealt
+            cardsDealt.append(card)
+        return cardsDealt
 
-deck1 = cards_deck()
+deck1 = cardsDeck()
 deck1.shuffleCards()
 print(deck1.cards)
 
@@ -105,21 +106,22 @@ def mainMenu():
 
     # While loop to loop through the try/except and if statements
     while True:
-        number_entered = input("\n   1: Instructions.\n   2: Start.\n")
+        numberEntered = input("\n   1: Instructions.\n   2: Start.\n")
         # Try/Except to check whether is a number or not
         try:
-            number_entered = int(number_entered)
+            numberEntered = int(numberEntered)
         except:
-            print("\n****Invalid Input Entered****")
+            print("\n      ****Invalid Input Entered****")
         # If statement to check what option user has selected
-        if number_entered == 1:
+        # Loop will break once option is selected
+        if numberEntered == 1:
             instructions()
             break
-        elif number_entered == 2:
+        elif numberEntered == 2:
             username()
             break
         else:
-            print("Please enter a number from the Selected options:")
+            print("Please select a number from the options:")
 
 
 # mainMenu()
