@@ -94,9 +94,9 @@ class cardsDeck:
                 cardsDealt.append(card)
         return cardsDealt
 
-deck1 = cardsDeck()
-deck1.shuffleCards()
-print(deck1.cards)
+# deck1 = cardsDeck()
+# deck1.shuffleCards()
+# print(deck1.cards)
 
 
 # Main Menu function where you will be able to select Instructions
@@ -131,3 +131,9 @@ def mainMenu():
 
 # mainMenu()
 
+# This function will ask the user to type the username
+def userName():
+    print("Hello")
+    userNameEnter = input("Please enter your username:\n")
+
+userName()
