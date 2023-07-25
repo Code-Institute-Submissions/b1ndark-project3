@@ -2,6 +2,9 @@
 import random
 import os
 
+# Variable
+USERNAME = ""
+
 
 # Function to clear screen
 def clean():
@@ -133,7 +136,19 @@ def mainMenu():
 
 # This function will ask the user to type the username
 def userName():
-    print("Hello")
-    userNameEnter = input("Please enter your username:\n")
+    
+    while True:
+        global USERNAME
+        USERNAME = input("\nPlease enter your username:\n")
+        
+        if USERNAME.isspace() is True:
+            print("Please enter username in order to proceed")
+        elif USERNAME == "":
+            print("Please enter username in order to proceed")
+        elif USERNAME.isalpha() is False:
+            print("Only letters accepted")
+        else:
+            mainMenu()
+
 
 userName()
