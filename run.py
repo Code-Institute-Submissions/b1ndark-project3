@@ -56,7 +56,7 @@ class cardsDeck:
         self.cards = []
         # List of car suits
         cardSuits = ["clubs", "diamonds", "hearts", "spades"]
-        # Dictionary list with card ranks and their respective values 
+        # Dictionary list with card ranks and their respective values
         cardRanks = [
             {"rank": "2", "value": 2},
             {"rank": "3", "value": 3},
@@ -78,13 +78,13 @@ class cardsDeck:
             for cardRank in cardRanks:
                 self.cards.append([cardSuit, cardRank])
 
-
     # To shuffle the cards list
     def shuffleCards(self):
         # When shuffling cards it will check if theres more than one left
-        if len(self.cards) > 1:
+        if len(self.cards) == 1:
+            pass
+        else:
             random.shuffle(self.cards)
-            
 
     # Function to deal cards, once they are dealt they also will be popped
     # And moved to cardsDealt
@@ -92,14 +92,16 @@ class cardsDeck:
         cardsDealt = []
         for i in range(number):
             # To check whether there are any cards left to be removed
-            if len(self.cards) > 0:
+            if len(self.cards) == 0:
+                pass
+            else:
                 card = self.cards.pop()
                 cardsDealt.append(card)
         return cardsDealt
 
-# deck1 = cardsDeck()
-# deck1.shuffleCards()
-# print(deck1.cards)
+deck1 = cardsDeck()
+deck1.shuffleCards()
+print(deck1.cards[1])
 
 
 # Main Menu function where you will be able to select Instructions
@@ -132,8 +134,6 @@ def mainMenu():
             print("Please select a number from the options:")
 
 
-# mainMenu()
-
 # This function will ask the user to type the username
 def userName():
     clean()
@@ -141,21 +141,23 @@ def userName():
     print("\n        Welcome to BlackJack Game \n")
     print("*" * 40)
     print("*" * 40)
-    
+
     # While loop to loop through the try/except and if statements
     # To check whether username has been entered or not
     while True:
         global USERNAME
         USERNAME = input("\nPlease enter your username:\n")
-        
+        # Check for spaces
         if USERNAME.isspace() is True:
             print("Please enter username in order to proceed")
+        # Check for blank input
         elif USERNAME == "":
             print("Please enter username in order to proceed")
+        # Check if user entered symbols or numbers
         elif USERNAME.isalpha() is False:
             print("Only letters accepted")
         else:
             mainMenu()
 
 
-userName()
+# userName()
