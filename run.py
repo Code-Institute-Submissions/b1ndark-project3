@@ -15,7 +15,7 @@ def clean():
 def instructions():
     clean()
     print("*" * 40)
-    print("\n            Instructions! \n")
+    print(f"\n {USERNAME} welcome to the instructions! \n")
     print("*" * 40)
     print("*" * 40)
     print("\n  Main goal is to either get 21 points\n\
@@ -107,7 +107,7 @@ class cardsDeck:
 def mainMenu():
     clean()
     print("*" * 40)
-    print("\n        Welcome to BlackJack Game \n")
+    print(f"\n   {USERNAME} welcome to BlackJack Game \n")
     print("*" * 40)
     print("*" * 40)
     print("\nPlease select from the following options:")
@@ -126,7 +126,7 @@ def mainMenu():
             instructions()
             break
         elif numberEntered == 2:
-            username()
+            start()
             break
         else:
             print("Please select a number from the options:")
@@ -136,7 +136,14 @@ def mainMenu():
 
 # This function will ask the user to type the username
 def userName():
+    clean()
+    print("*" * 40)
+    print("\n        Welcome to BlackJack Game \n")
+    print("*" * 40)
+    print("*" * 40)
     
+    # While loop to loop through the try/except and if statements
+    # To check whether username has been entered or not
     while True:
         global USERNAME
         USERNAME = input("\nPlease enter your username:\n")
