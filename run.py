@@ -1,5 +1,6 @@
 # import random, so cards can be shuffled in the game
 import random
+# import os to clear terminal
 import os
 
 # Variable
@@ -51,11 +52,21 @@ def instructions():
             print("Please select a number from the options:")
 
 
+class cardSelected:
+    # init function to create an object in this case, to create a card
+    def __init__(self, cardSuit, cardRank):
+        self.cardSuit = cardSuit
+        self.cardRank = cardRank
+    # to create and return a readable string of the card
+    def __str__(self):
+        return f"{self.cardRank['rank']} of {self.cardSuit}"
+
+
 class cardsDeck:
     def __init__(self):
         self.cards = []
-        # List of car suits
-        cardSuits = ["clubs", "diamonds", "hearts", "spades"]
+        # List of card suits
+        cardSuits = ["Clubs", "Diamonds", "Hearts", "Spades"]
         # Dictionary list with card ranks and their respective values
         cardRanks = [
             {"rank": "2", "value": 2},
@@ -76,7 +87,7 @@ class cardsDeck:
         # Append cardSuits and cardRanks onto cards list 'cards = []'
         for cardSuit in cardSuits:
             for cardRank in cardRanks:
-                self.cards.append([cardSuit, cardRank])
+                self.cards.append(cardSelected(cardSuit, cardRank))
 
     # To shuffle the cards list
     def shuffleCards(self):
