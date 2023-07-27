@@ -136,7 +136,7 @@ class handCard:
 
     # Function to display the cards and their total value
     def display(self):
-        print(f'{"Your cards are:"}')
+        print(f'{USERNAME} your cards are:')
 
         for card in self.cards:
             print(card)
@@ -152,7 +152,7 @@ deck1.shuffleCards()
 
 handCard = handCard()
 handCard.addCard(deck1.dealCard(5))
-handCard.display()
+#handCard.display()
 
 
 # Main Menu function where you will be able to select Instructions
@@ -179,7 +179,7 @@ def mainMenu():
             instructions()
             break
         elif numberEntered == 2:
-            start()
+            handCard.display()
             break
         else:
             print("Please select a number from the options:")
@@ -211,4 +211,4 @@ def userName():
             mainMenu()
 
 
-#userName()
+userName()
