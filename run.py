@@ -112,9 +112,23 @@ class cardsDeck:
         return cardsDealt
 
 
+class handCard:
+    def __init__(self):
+        self.cards = []
+        self.value = 0
+
+    # Extend method to add each card to cardList
+    def addCard(self, cardList):
+        self.cards.extend(cardList)
+
+   
+
 deck1 = cardsDeck()
 deck1.shuffleCards()
-print(deck1.cards[0], " and ", deck1.cards[1])
+
+handCard = handCard()
+handCard.addCard(deck1.dealCard(2))
+print(handCard.cards[1])
 
 
 # Main Menu function where you will be able to select Instructions
