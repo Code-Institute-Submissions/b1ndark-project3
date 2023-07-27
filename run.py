@@ -124,12 +124,24 @@ class handCard:
     def cardValueCalculate(self):
         self.value = 0
         self.ace = False
-        
+
+        for card in self.cards:
+            cardValueCalculate = int(card.cardRank["value"])
+            self.value += cardValueCalculate
+
+    # To calculate the value of the cards
+    def displayValue(self):
+        self.cardValueCalculate()
+        return self.value
+
+    # Function to display the cards and their total value
     def display(self):
         print(f'{"Your cards are:"}')
 
         for card in self.cards:
             print(card)
+        print("Total value of:", self.displayValue())
+            
         print()
 
 
