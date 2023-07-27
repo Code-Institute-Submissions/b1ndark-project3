@@ -121,14 +121,26 @@ class handCard:
     def addCard(self, cardList):
         self.cards.extend(cardList)
 
+    def cardValueCalculate(self):
+        self.value = 0
+        self.ace = False
+        
+    def display(self):
+        print(f'{"Your cards are:"}')
+
+        for card in self.cards:
+            print(card)
+        print()
+
+
    
 
 deck1 = cardsDeck()
 deck1.shuffleCards()
 
 handCard = handCard()
-handCard.addCard(deck1.dealCard(2))
-print(handCard.cards[1])
+handCard.addCard(deck1.dealCard(5))
+handCard.display()
 
 
 # Main Menu function where you will be able to select Instructions
