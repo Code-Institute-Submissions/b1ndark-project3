@@ -57,6 +57,7 @@ class cardSelected:
     def __init__(self, cardSuit, cardRank):
         self.cardSuit = cardSuit
         self.cardRank = cardRank
+
     # to create and return a readable string of the card
     def __str__(self):
         return f"{self.cardRank['rank']} of {self.cardSuit}"
@@ -110,9 +111,10 @@ class cardsDeck:
                 cardsDealt.append(card)
         return cardsDealt
 
+
 deck1 = cardsDeck()
 deck1.shuffleCards()
-print(deck1.cards[1])
+print(deck1.cards[0], " and ", deck1.cards[1])
 
 
 # Main Menu function where you will be able to select Instructions
@@ -171,4 +173,4 @@ def userName():
             mainMenu()
 
 
-# userName()
+#userName()
