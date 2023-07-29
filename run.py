@@ -152,7 +152,7 @@ deck1.shuffleCards()
 
 handCard = handCard()
 handCard.addCard(deck1.dealCard(5))
-#handCard.display()
+handCard.display()
 
 
 # Main Menu function where you will be able to select Instructions
@@ -211,4 +211,4 @@ def userName():
             mainMenu()
 
 
-userName()
+#userName()

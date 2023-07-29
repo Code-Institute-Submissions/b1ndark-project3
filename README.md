@@ -1,31 +1,304 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **BlackJack Game**
 
-Welcome USER_NAME,
+## This website is a [](),
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+<p>
+<p>
+<p>
+<p>
+<br>
 
-## Reminders
+![image]()
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+[]()
 
-## Creating the Heroku app
+---
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## **Content**
 
-1. `heroku/python`
-2. `heroku/nodejs`
+- [**BlackJack Game**](#blackjack-game)
+  - [User Experience](#user-experience)
+  - [Design](#design)
+    - [Typography](#typography)
+    - [Features](#features)
+      - [Game]()
+  - [Programs and tools used](#programs-and-tools-used)
+  - [Languages](#languages)
+    - [Python]()  
+  - [Accessibility](#accessibility)
+    - [Lighthouse](#lighthouse)
+      - [Desktop Page](#desktop-page)
+      - [Mobile Page](#mobile-page)  
+  - [Testing](#testing)
+  - [Bugs](#bugs) 
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Content](#content-1)
+    - [Media](#media)  
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+  - [Acknowledgments](#acknowledgments)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+---
 
-Connect your GitHub repository and deploy as normal.
+## **User Experience**
 
-## Constraints
+Visitors:
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- 
+- 
+- 
 
------
-Happy coding!
+Goals:
+
+- 
+- 
+- 
+- 
+
+The website:
+
+- 
+- 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+- 
+    - 
+    - 
+    - 
+    - 
+- 
+    - 
+    - 
+    - 
+    - 
+- 
+- 
+
+[Back to the top](#blackjack-game)
+
+---
+
+## **Design**
+
+### Typography
+
+Fonts used came from []():
+
+- []()
+- []()
+
+Colours used:
+
+- 
+
+  ![image]()
+<br>
+
+[Back to the top](#blackjack-game)
+
+---
+
+### Features
+
+
+  <br>
+
+- #### Main Menu Container
+
+    - 
+    - 
+    - 
+      - 
+      - 
+      - 
+      - 
+      -  
+      <br>
+
+      ![]()
+
+ 
+
+[Back to the top](#blackjack-game)
+
+---
+
+## Programs and tools used
+
+- [Codeanywhere](https://app.codeanywhere.com/) - To create the website.
+- [Github](https://github.com/) - Where the website is stored.
+- [Am I Responsive?](https://ui.dev/amiresponsive) - To display the website on different websites.
+- [Spell Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - To check spelling.
+- [Google Tools](https://developer.chrome.com/docs/devtools/) - to check website styling and responsiveness.
+- [Gyazo](https://gyazo.com/) - To take Screenshots.
+
+[Back to the top](#blackjack-game)
+
+---
+
+## Languages
+
+- ### Python
+
+  - 
+
+    -  
+    ![]()  
+    <br>
+
+
+[Back to the top](#blackjack-game)
+
+---
+
+## Accessibility
+
+I :
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+![image]()
+
+[Back to the top](#blackjack-game)
+
+---
+
+## Testing
+
+- 
+  - 
+  - 
+  - 
+  - 
+- 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+- 
+- 
+- 
+- 
+ <br>
+
+[Back to the top](#blackjack-game)
+
+---
+
+### Main
+
+| Feature | Expected Outcome | Testing | Result | Pass or Fail |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+
+ <br>
+
+[Back to the top](#blackjack-game)
+
+---
+
+## Bugs
+
+- 
+    - 
+- 
+    - 
+- 
+  - 
+- 
+  - 
+  <br>
+
+[Back to the top](#blackjack-game)
+
+---
+ 
+## Deployment
+
+### My Deployment
+
+- The website was deployed to Github pages. Steps to deploy:  
+
+1. Open Github
+2. Log in into your Github account. 
+3. In the Github repository select the project. 
+4. Navigate to the settings tab. 
+5. Then scroll down and on your left select Pages. 
+6. Go to branch, and select master branch. 
+7. Once master branch is selected, wait a moment and it will provide a page link to the website.  
+<br>
+  
+- The live link can be found here - [My Website]().
+  <br>
+
+### Local Deployment
+
+#### Fork the repository
+
+  1. Open Github.
+  2. Log in or Sign up.
+  3. Look for my repository []().
+  4. Last on the right corner you will find the fork button(click on it).
+
+#### Clone the repository
+  1. Open Github
+  2. Log in or Sign up
+  3. Look for my repository []()
+  4. Look for code button next to the gitpod button at the top right(click on it).
+  5. A window will pop up with options for you to select to clone it with such as HTTPS, SSH or GitHub CLI.
+  6. Once selected copy the link that is shown.
+  7. Open your code editor terminal.
+  8. Type ```git clone``` in the terminal and paste the copied repository link.
+  9. After all that just Press enter to create the clone.
+
+
+
+
+[Back to the top](#blackjack-game)
+
+---
+
+## Credits
+
+- ### Content
+
+    - 
+      - []()
+      
+    - 
+      - []()
+      
+    - I have used Readme structure from my first project as a template.
+
+  <br>
+
+- ### Media
+
+  - Websites used-
+
+    - []()
+    - []()
+
+
+[Back to the top](#blackjack-game)
+
+---
+
+## Acknowledgments
+
+- 
+- 
+- 
+
+[Back to the top](#blackjack-game)
