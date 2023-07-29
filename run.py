@@ -113,7 +113,7 @@ class cardsDeck:
 
 
 class handCard:
-    def __init__(self, cardDealer = False):
+    def __init__(self, cardDealer=False):
         self.cards = []
         self.value = 0
         self.cardDealer = cardDealer
@@ -122,19 +122,21 @@ class handCard:
     def addCard(self, cardList):
         self.cards.extend(cardList)
 
+    # Funtion to check values and if there is an ace
     def cardValueCalculate(self):
         self.value = 0
         self.ace = False
-
+        # Will check the cards value and calculate the total of the same ones
         for card in self.cards:
             cardValueCalculate = int(card.cardRank["value"])
             self.value += cardValueCalculate
+            # Checks for ace cards if they been dealt
             if card.cardRank["rank"] == "A":
                 self.ace = True
 
         # So if there is an Ace and the total score is above 21
         # It will remove 10 score of the same Ace, example 22-10 = 12
-        if self.ace == True:
+        if self.ace is True:
             if self.value > 21:
                 self.value -= 10
 
@@ -149,20 +151,21 @@ class handCard:
 
     # Function to display the cards and their total value
     def display(self):
-        if self.cardDealer == True:
+        if self.cardDealer is True:
+            # If is cardDealer, it will print this
             print(f'{"Dealer cards are:"}')
         else:
+            # Else if is the User, it will print this
             print(f'{USERNAME} your cards are:')
-
+        # Will print each card called
         for card in self.cards:
             print(card)
+        # Checks if isn't the cardDealer
         if not self.cardDealer:
             print("Total value of:", self.displayValue())
-            
+
         print()
 
-
-   
 
 deck1 = cardsDeck()
 deck1.shuffleCards()
@@ -228,4 +231,4 @@ def userName():
             mainMenu()
 
 
-#userName()
+# userName()
