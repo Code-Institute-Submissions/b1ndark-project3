@@ -113,9 +113,10 @@ class cardsDeck:
 
 
 class handCard:
-    def __init__(self):
+    def __init__(self, cardDealer = False):
         self.cards = []
         self.value = 0
+        self.cardDealer = cardDealer
 
     # Extend method to add each card to cardList
     def addCard(self, cardList):
@@ -148,11 +149,15 @@ class handCard:
 
     # Function to display the cards and their total value
     def display(self):
-        print(f'{USERNAME} your cards are:')
+        if self.cardDealer == True:
+            print(f'{"Dealer cards are:"}')
+        else:
+            print(f'{USERNAME} your cards are:')
 
         for card in self.cards:
             print(card)
-        print("Total value of:", self.displayValue())
+        if not self.cardDealer:
+            print("Total value of:", self.displayValue())
             
         print()
 
