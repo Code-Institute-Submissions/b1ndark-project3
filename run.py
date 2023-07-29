@@ -137,11 +137,14 @@ class handCard:
             if self.value > 21:
                 self.value -= 10
 
-
     # To calculate the value of the cards
     def displayValue(self):
         self.cardValueCalculate()
         return self.value
+
+    # If is 21 then is a BlackJack
+    def blackJack(self):
+        return self.displayValue() == 21
 
     # Function to display the cards and their total value
     def display(self):
