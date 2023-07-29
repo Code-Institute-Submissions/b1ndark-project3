@@ -128,6 +128,15 @@ class handCard:
         for card in self.cards:
             cardValueCalculate = int(card.cardRank["value"])
             self.value += cardValueCalculate
+            if card.cardRank["rank"] == "A":
+                self.ace = True
+
+        # So if there is an Ace and the total score is above 21
+        # It will remove 10 score of the same Ace, example 22-10 = 12
+        if self.ace == True:
+            if self.value > 21:
+                self.value -= 10
+
 
     # To calculate the value of the cards
     def displayValue(self):
