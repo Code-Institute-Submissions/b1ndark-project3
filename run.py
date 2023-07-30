@@ -175,30 +175,43 @@ class blackJackGame:
         print("*" * 40)
         print("*" * 40)
 
+        # To shuffle the deck of cards for the game
         deck = cardsDeck()
         deck.shuffleCards()
 
         cardDealerHand = handCard(cardDealer=True)
         userHand = handCard()
 
+        # to deal cards to the Dealer and the User from the shuffled deck
         for i in range(2):
             cardDealerHand.addCard(deck.dealCard(1))
             userHand.addCard(deck.dealCard(1))
 
+        # Cards dealt will be printed
         print("\n")
         cardDealerHand.display()
         userHand.display()
+
+        # To check if there is any winners
+        self.winnerCheck(cardDealerHand, userHand, True)
         
-
-
-#deck1 = cardsDeck()
-#deck1.shuffleCards()
-
-#handCard = handCard()
-#handCard.addCard(deck1.dealCard(5))
-#handCard.display()
-game = blackJackGame()
-game.playGame()
+    # Function to check if there is a winner
+    def winnerCheck(self, cardDealerHand, userHand, blackJackGameOver=False):
+        if not blackJackGameOver:
+            if userHand.cardValueCalculate() > 21:
+                print(f"{USERNAME} you have lost!")
+                return True
+            elif cardDealerHand.cardValueCalculate() > 21:
+                print(f"Dealer has lost!\n{USERNAME} you have won!")
+                return True
+        else:
+            if cardDealerHand.cardValueCalculate() == userHand.cardValueCalculate():
+                print("No winners")
+            elif userHand.cardValueCalculate() > cardDealerHand.cardValueCalculate():
+                print(f"Dealer has lost!\n{USERNAME} you have won!")
+            else:
+                print(f"{USERNAME} you have lost!")
+        return False
 
 
 # Main Menu function where you will be able to select Instructions
@@ -225,6 +238,7 @@ def mainMenu():
             instructions()
             break
         elif numberEntered == 2:
+            game = blackJackGame()
             game.playGame()
             break
         else:
@@ -257,5 +271,5 @@ def userName():
             mainMenu()
             # Had to add this break to stop the loop
             break
-            
+
 userName()
