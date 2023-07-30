@@ -236,6 +236,6 @@ def userName():
             print("Only letters accepted")
         else:
             mainMenu()
-            
+            break
             
 userName()
