@@ -170,7 +170,11 @@ class handCard:
 class blackJackGame:
     def playGame(self):
         clean()
-        print("hello")
+        print("*" * 40)
+        print(f"\n     {USERNAME} let's start the game! \n")
+        print("*" * 40)
+        print("*" * 40)
+
 
 #deck1 = cardsDeck()
 #deck1.shuffleCards()
@@ -236,6 +240,7 @@ def userName():
             print("Only letters accepted")
         else:
             mainMenu()
+            # Had to add this break to stop the loop
             break
             
 userName()
