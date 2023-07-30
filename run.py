@@ -196,21 +196,31 @@ class blackJackGame:
         self.winnerCheck(cardDealerHand, userHand, True)
         
     # Function to check if there is a winner
-    def winnerCheck(self, cardDealerHand, userHand, blackJackGameOver=False):
-        if not blackJackGameOver:
-            if userHand.cardValueCalculate() > 21:
+    def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
+        if not gameOver:
+            if cardDealerHand.cardValueCalculate() > 21:
+                print(f"Dealer has lost!\n{USERNAME} you have won!")
+                return True
+            elif userHand.cardValueCalculate() > 21:
                 print(f"{USERNAME} you have lost!")
                 return True
-            elif cardDealerHand.cardValueCalculate() > 21:
+            elif cardDealerHand.blackJack() == userHand.blackJack():
+                print("No Winners")
+                return True
+            elif cardDealerHand.blackJack():
+                print(f"{USERNAME} you have lost!")
+                return True
+            elif userHand.blackJack():
                 print(f"Dealer has lost!\n{USERNAME} you have won!")
                 return True
         else:
-            if cardDealerHand.cardValueCalculate() == userHand.cardValueCalculate():
-                print("No winners")
-            elif userHand.cardValueCalculate() > cardDealerHand.cardValueCalculate():
+            if userHand.cardValueCalculate() > cardDealerHand.cardValueCalculate():
                 print(f"Dealer has lost!\n{USERNAME} you have won!")
+            elif cardDealerHand.cardValueCalculate() == userHand.cardValueCalculate():
+                print("No winners")
             else:
                 print(f"{USERNAME} you have lost!")
+            return True
         return False
 
 
