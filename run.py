@@ -179,12 +179,15 @@ class blackJackGame:
         deck.shuffleCards()
 
         cardDealerHand = handCard(cardDealer=True)
+        userHand = handCard()
 
         for i in range(2):
             cardDealerHand.addCard(deck.dealCard(1))
+            userHand.addCard(deck.dealCard(1))
 
         print("\n")
         cardDealerHand.display()
+        userHand.display()
         
 
 
