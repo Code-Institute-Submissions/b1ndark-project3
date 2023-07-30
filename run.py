@@ -175,6 +175,18 @@ class blackJackGame:
         print("*" * 40)
         print("*" * 40)
 
+        deck = cardsDeck()
+        deck.shuffleCards()
+
+        cardDealerHand = handCard(cardDealer=True)
+
+        for i in range(2):
+            cardDealerHand.addCard(deck.dealCard(1))
+
+        print("\n")
+        cardDealerHand.display()
+        
+
 
 #deck1 = cardsDeck()
 #deck1.shuffleCards()
