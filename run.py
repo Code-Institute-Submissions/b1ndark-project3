@@ -167,12 +167,19 @@ class handCard:
         print()
 
 
-deck1 = cardsDeck()
-deck1.shuffleCards()
+class blackJackGame:
+    def playGame(self):
+        clean()
+        print("hello")
 
-handCard = handCard()
-handCard.addCard(deck1.dealCard(5))
-handCard.display()
+#deck1 = cardsDeck()
+#deck1.shuffleCards()
+
+#handCard = handCard()
+#handCard.addCard(deck1.dealCard(5))
+#handCard.display()
+game = blackJackGame()
+game.playGame()
 
 
 # Main Menu function where you will be able to select Instructions
@@ -199,7 +206,7 @@ def mainMenu():
             instructions()
             break
         elif numberEntered == 2:
-            handCard.display()
+            game.playGame()
             break
         else:
             print("Please select a number from the options:")
@@ -229,6 +236,6 @@ def userName():
             print("Only letters accepted")
         else:
             mainMenu()
-
-
-# userName()
+            
+            
+userName()
