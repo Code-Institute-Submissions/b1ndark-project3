@@ -192,17 +192,19 @@ class blackJackGame:
         cardDealerHand.display()
         userHand.display()
 
-        # To check if there is any winners
-        if cardDealerHand.displayValue() or userHand.displayValue():
+        # if statement to check if there is any winners
+        # as the first 2 cards are dealt
+        if cardDealerHand.blackJack():
+            self.winnerCheck(cardDealerHand)
+        elif cardDealerHand.displayValue() or userHand.displayValue():
             self.winnerCheck(cardDealerHand, userHand)
 
-
-        while userHand.displayValue() < 21 or cardDealerHand.blackJack() and numberEntered not in ["2"]:
+        while userHand.displayValue() < 21:
             print("Please Select from below:")
             numberEntered = input("   1: Hit.\n   2: Stay.\n")
             while numberEntered not in ["1", "2"]:
-                numberEntered = input("\nPlease enter:\n   1: Hit.\n   2: Stay.\n")
-
+                numberEntered = input("\nPlease enter:\n   1: Hit.\n\
+   2: Stay.\n")
             # Try/Except to check whether is a number or not
             try:
                 numberEntered = int(numberEntered)
@@ -213,6 +215,7 @@ class blackJackGame:
             if numberEntered is 1:
                 userHand.addCard(deck.dealCard(1))
                 userHand.display()
+                # To check if there is any winners
                 self.winnerCheck(cardDealerHand, userHand)
             elif numberEntered is 2:
                 # To check if there is any winners
@@ -226,8 +229,7 @@ class blackJackGame:
             cardDealerHand.addCard(deck.dealCard(1))
             cardDealerHandValue = cardDealerHand.displayValue()
 
-
-    # Function to check if there is a winner
+    # Function to check if there is a winner or a tie
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
         if not gameOver:
             if userHand.displayValue() > 21:
@@ -313,5 +315,6 @@ def userName():
             mainMenu()
             # Had to add this break to stop the loop
             break
+
 
 userName()
