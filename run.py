@@ -195,12 +195,10 @@ class blackJackGame:
 
         # if statement to check if there is any winners
         # as the first 2 cards are dealt
-        if cardDealerHand.blackJack():
-            self.winnerCheck(cardDealerHand)
-        elif cardDealerHand.displayValue() or userHand.displayValue():
-            self.winnerCheck(cardDealerHand, userHand)
+        self.winnerCheck(cardDealerHand, userHand)
 
-        while userHand.displayValue() < 21:
+        while userHand.displayValue() < 21 and \
+                cardDealerHand.displayValue() < 21:
             print("Please Select from below:")
             numberEntered = input("   1: Hit.\n   2: Stay.\n")
             while numberEntered not in ["1", "2"]:
