@@ -193,18 +193,50 @@ class blackJackGame:
         userHand.display()
 
         # To check if there is any winners
-        self.winnerCheck(cardDealerHand, userHand, True)
-        
+        if cardDealerHand.displayValue() or userHand.displayValue():
+            self.winnerCheck(cardDealerHand, userHand)
+
+
+        while userHand.displayValue() < 21 or cardDealerHand.blackJack() and numberEntered not in ["2"]:
+            print("Please Select from below:")
+            numberEntered = input("   1: Hit.\n   2: Stay.\n")
+            while numberEntered not in ["1", "2"]:
+                numberEntered = input("\nPlease enter:\n   1: Hit.\n   2: Stay.\n")
+
+            # Try/Except to check whether is a number or not
+            try:
+                numberEntered = int(numberEntered)
+            except:
+                print("\n      ****Invalid Input Entered****")
+            # If statement to check what option user has selected
+            # Loop will break once option is selected
+            if numberEntered is 1:
+                userHand.addCard(deck.dealCard(1))
+                userHand.display()
+                self.winnerCheck(cardDealerHand, userHand)
+            elif numberEntered is 2:
+                # To check if there is any winners
+                self.winnerCheck(cardDealerHand, userHand, gameOver=True)
+                break
+
+        cardDealerHandValue = cardDealerHand.displayValue()
+        userHandValue = userHand.displayValue()
+
+        while cardDealerHandValue < 17:
+            cardDealerHand.addCard(deck.dealCard(1))
+            cardDealerHandValue = cardDealerHand.displayValue()
+
+
     # Function to check if there is a winner
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
         if not gameOver:
-            if cardDealerHand.cardValueCalculate() > 21:
-                print(f"Dealer has lost!\n{USERNAME} you have won!")
-                return True
-            elif userHand.cardValueCalculate() > 21:
+            if userHand.displayValue() > 21:
                 print(f"{USERNAME} you have lost!")
                 return True
-            elif cardDealerHand.blackJack() == userHand.blackJack():
+            elif cardDealerHand.displayValue() > 21:
+                print(f"Dealer has lost!\n{USERNAME} you have won!")
+                return True
+            elif cardDealerHand.blackJack() and userHand.blackJack():
                 print("No Winners")
                 return True
             elif cardDealerHand.blackJack():
@@ -214,9 +246,9 @@ class blackJackGame:
                 print(f"Dealer has lost!\n{USERNAME} you have won!")
                 return True
         else:
-            if userHand.cardValueCalculate() > cardDealerHand.cardValueCalculate():
+            if userHand.displayValue() > cardDealerHand.displayValue():
                 print(f"Dealer has lost!\n{USERNAME} you have won!")
-            elif cardDealerHand.cardValueCalculate() == userHand.cardValueCalculate():
+            elif cardDealerHand.displayValue() == userHand.displayValue():
                 print("No winners")
             else:
                 print(f"{USERNAME} you have lost!")
