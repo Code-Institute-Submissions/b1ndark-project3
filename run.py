@@ -212,21 +212,23 @@ class blackJackGame:
             # If statement to check what option user has selected
             # Loop will break once option is selected
             if numberEntered is 1:
+                cardDealerHandValue = cardDealerHand.displayValue()
+                userHandValue = userHand.displayValue()
+                # This will add a card to the dealer if total is < 17
+                if cardDealerHandValue < 17:
+                    cardDealerHand.addCard(deck.dealCard(1))
+                    cardDealerHandValue = cardDealerHand.displayValue()
+                # Add card to User
                 userHand.addCard(deck.dealCard(1))
+                cardDealerHand.display()
                 userHand.display()
                 # To check if there is any winners
-                self.winnerCheck(cardDealerHand, userHand)
+                
             elif numberEntered is 2:
                 # To check if there is any winners
                 self.winnerCheck(cardDealerHand, userHand, gameOver=True)
                 break
-
-        cardDealerHandValue = cardDealerHand.displayValue()
-        userHandValue = userHand.displayValue()
-
-        while cardDealerHandValue < 17:
-            cardDealerHand.addCard(deck.dealCard(1))
-            cardDealerHandValue = cardDealerHand.displayValue()
+        self.winnerCheck(cardDealerHand, userHand)
 
     # Function to check if there is a winner or a tie
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
@@ -235,7 +237,7 @@ class blackJackGame:
                 print(f"  {USERNAME} you have lost!")
                 return True
             elif cardDealerHand.displayValue() > 21:
-                print(f"  Dealer has lost!\n{USERNAME} you have won!")
+                print(f"  Dealer has lost!\n  {USERNAME} you have won!")
                 return True
             elif cardDealerHand.blackJack() and userHand.blackJack():
                 print("  No Winners\n  It's a tie!")
