@@ -43,7 +43,8 @@ def instructions():
         # If statement to check what option user has selected
         # Loop will break once option is selected
         if numberEntered == 1:
-            start()
+            game = blackJackGame()
+            game.playGame()
             break
         elif numberEntered == 2:
             mainMenu()
