@@ -15,31 +15,31 @@ def clean():
 # Function to show instructions
 def instructions():
     clean()
-    print("*" * 40)
-    print(f"\n {USERNAME} welcome to the instructions! \n")
-    print("*" * 40)
-    print("*" * 40)
-    print("\n  Main goal is to either get 21 points\n\
-    or to be as close as possible\n\
-        \n  If you go above 21 you automatically\n\
-             lose the game\n")
-    print("    The dealer will ask you whether\n\
-        you want to Hit or Stay\n")
-    print("   2 = 2, 3 = 3, 4 = 4, 5 = 5, 6 = 6\n\
-  7 = 7, 8 = 8, 9 = 9, J = 10, Q = 10\n\
-    K = 10, and finally A = 1 or 11\n")
-    print("  The main goal is to beat the dealer!\n")
-    print("*" * 40)
+    print("*" * 50)
+    print(f"\n   {USERNAME} welcome to the instructions! \n")
+    print("*" * 50)
+    print("*" * 50)
+    print("\n    Main goal is to either get 21 points\n\
+      or to be as close as possible\n\
+        \n    If you go above 21 you automatically\n\
+               lose the game\n")
+    print("      The dealer will ask you whether\n\
+          you want to Hit or Stay\n")
+    print("     2 = 2, 3 = 3, 4 = 4, 5 = 5, 6 = 6\n\
+    7 = 7, 8 = 8, 9 = 9, J = 10, Q = 10\n\
+      K = 10, and finally A = 1 or 11\n")
+    print("    The main goal is to beat the dealer!\n")
+    print("*" * 50)
 
-    print("\nPlease select from the following options:")
+    print("\n  Please select from the following options:")
     # While loop to loop through the try/except and if statements
     while True:
-        numberEntered = input("\n   1: Start.\n   2: Exit.\n")
+        numberEntered = input("\n     1: Start.\n     2: Exit.\n")
         # Try/Except to check whether is a number or not
         try:
             numberEntered = int(numberEntered)
         except:
-            print("\n      ****Invalid Input Entered****")
+            print("\n         ****Invalid Input Entered****")
         # If statement to check what option user has selected
         # Loop will break once option is selected
         if numberEntered == 1:
@@ -50,7 +50,7 @@ def instructions():
             mainMenu()
             break
         else:
-            print("Please select a number from the options:")
+            print("  Please select a number from the options:")
 
 
 class cardSelected:
@@ -61,7 +61,7 @@ class cardSelected:
 
     # to create and return a readable string of the card
     def __str__(self):
-        return f"{self.cardRank['rank']} of {self.cardSuit}"
+        return f"    {self.cardRank['rank']} of {self.cardSuit}"
 
 
 class cardsDeck:
@@ -154,16 +154,16 @@ class handCard:
     def display(self):
         if self.cardDealer is True:
             # If is cardDealer, it will print this
-            print(f'{"Dealer cards are:"}')
+            print(f'{"  Dealer cards are:"}')
         else:
             # Else if is the User, it will print this
-            print(f'{USERNAME} your cards are:')
+            print(f'  {USERNAME} your cards are:')
         # Will print each card called
         for card in self.cards:
             print(card)
         # Checks if isn't the cardDealer
         if not self.cardDealer:
-            print("Total value of:", self.displayValue())
+            print("  Total value of:", self.displayValue())
 
         print()
 
@@ -199,16 +199,16 @@ class blackJackGame:
 
         while userHand.displayValue() < 21 and \
                 cardDealerHand.displayValue() < 21:
-            print("Please Select from below:")
-            numberEntered = input("   1: Hit.\n   2: Stay.\n")
+            print("  Please Select from below:")
+            numberEntered = input("     1: Hit.\n     2: Stay.\n")
             while numberEntered not in ["1", "2"]:
-                numberEntered = input("\nPlease enter:\n   1: Hit.\n\
-   2: Stay.\n")
+                numberEntered = input("\n  Please enter:\n     1: Hit.\n\
+     2: Stay.\n")
             # Try/Except to check whether is a number or not
             try:
                 numberEntered = int(numberEntered)
             except:
-                print("\n      ****Invalid Input Entered****")
+                print("\n        ****Invalid Input Entered****")
             # If statement to check what option user has selected
             # Loop will break once option is selected
             if numberEntered is 1:
@@ -232,27 +232,27 @@ class blackJackGame:
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
         if not gameOver:
             if userHand.displayValue() > 21:
-                print(f"{USERNAME} you have lost!")
+                print(f"  {USERNAME} you have lost!")
                 return True
             elif cardDealerHand.displayValue() > 21:
-                print(f"Dealer has lost!\n{USERNAME} you have won!")
+                print(f"  Dealer has lost!\n{USERNAME} you have won!")
                 return True
             elif cardDealerHand.blackJack() and userHand.blackJack():
-                print("No Winners")
+                print("  No Winners\n  It's a tie!")
                 return True
             elif cardDealerHand.blackJack():
-                print(f"{USERNAME} you have lost!")
+                print(f"  {USERNAME} you have lost!")
                 return True
             elif userHand.blackJack():
-                print(f"Dealer has lost!\n{USERNAME} you have won!")
+                print(f"  Dealer has lost!\n  {USERNAME} you have won!")
                 return True
         else:
             if userHand.displayValue() > cardDealerHand.displayValue():
-                print(f"Dealer has lost!\n{USERNAME} you have won!")
+                print(f"  Dealer has lost!\n  {USERNAME} you have won!")
             elif cardDealerHand.displayValue() == userHand.displayValue():
-                print("No winners")
+                print("  No winners.\n  It's a tie!")
             else:
-                print(f"{USERNAME} you have lost!")
+                print(f"  {USERNAME} you have lost!")
             return True
         return False
 
@@ -261,20 +261,20 @@ class blackJackGame:
 # Or start the game
 def mainMenu():
     clean()
-    print("*" * 40)
-    print(f"\n   {USERNAME} welcome to BlackJack Game \n")
-    print("*" * 40)
-    print("*" * 40)
-    print("\nPlease select from the following options:")
+    print("*" * 50)
+    print(f"\n      {USERNAME} welcome to BlackJack Game \n")
+    print("*" * 50)
+    print("*" * 50)
+    print("\n  Please select from the following options:")
 
     # While loop to loop through the try/except and if statements
     while True:
-        numberEntered = input("\n   1: Instructions.\n   2: Start.\n")
+        numberEntered = input("\n     1: Instructions.\n     2: Start.\n")
         # Try/Except to check whether is a number or not
         try:
             numberEntered = int(numberEntered)
         except:
-            print("\n      ****Invalid Input Entered****")
+            print("\n         ****Invalid Input Entered****")
         # If statement to check what option user has selected
         # Loop will break once option is selected
         if numberEntered == 1:
@@ -285,31 +285,31 @@ def mainMenu():
             game.playGame()
             break
         else:
-            print("Please select a number from the options:")
+            print("  Please select a number from the options:")
 
 
 # This function will ask the user to type the username
 def userName():
     clean()
-    print("*" * 40)
-    print("\n        Welcome to BlackJack Game \n")
-    print("*" * 40)
-    print("*" * 40)
+    print("*" * 50)
+    print("\n           Welcome to BlackJack Game \n")
+    print("*" * 50)
+    print("*" * 50)
 
     # While loop to loop through the try/except and if statements
     # To check whether username has been entered or not
     while True:
         global USERNAME
-        USERNAME = input("\nPlease enter your username:\n")
+        USERNAME = input("\n  Please enter your username:\n")
         # Check for spaces
         if USERNAME.isspace() is True:
-            print("Please enter username in order to proceed")
+            print("  Please enter username in order to proceed")
         # Check for blank input
         elif USERNAME == "":
-            print("Please enter username in order to proceed")
+            print("  Please enter username in order to proceed")
         # Check if user entered symbols or numbers
         elif USERNAME.isalpha() is False:
-            print("Only letters accepted")
+            print("  Only letters accepted")
         else:
             mainMenu()
             # Had to add this break to stop the loop
