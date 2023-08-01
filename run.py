@@ -34,7 +34,7 @@ def instructions():
     print("\n  Please select from the following options:")
     # While loop to loop through the try/except and if statements
     while True:
-        numberEntered = input("\n     1: Start.\n     2: Exit.\n")
+        numberEntered = input("\n     1: Start\n     2: Exit\n")
         # Try/Except to check whether is a number or not
         try:
             numberEntered = int(numberEntered)
@@ -151,7 +151,7 @@ class handCard:
         return self.displayValue() == 21
 
     # Function to display the cards and their total value
-    def display(self):
+    def display(self, displayDealersHiddenCard=False):
         if self.cardDealer is True:
             # If is cardDealer, it will print this
             print(f'{"  Dealer cards are:"}')
@@ -159,8 +159,12 @@ class handCard:
             # Else if is the User, it will print this
             print(f'  {USERNAME} your cards are:')
         # Will print each card called
-        for card in self.cards:
-            print(card)
+        for index, card in enumerate(self.cards):
+            if index == 1 and self.cardDealer and not\
+                 displayDealersHiddenCard and not self.blackJack():
+                print("      🂠")
+            else:
+                print(card)
         # Checks if isn't the cardDealer
         if not self.cardDealer:
             print("  Total value of:", self.displayValue())
@@ -195,16 +199,15 @@ class blackJackGame:
 
         # if statement to check if there is any winners
         # as the first 2 cards are dealt
-        if self.winnerCheck(cardDealerHand, userHand):
-            pass
+        self.winnerCheck(cardDealerHand, userHand)
 
         while userHand.displayValue() < 21 and \
                 cardDealerHand.displayValue() < 21:
             print("  Please Select from below:")
-            numberEntered = input("     1: Hit.\n     2: Stay.\n")
+            numberEntered = input("     1: Hit\n     2: Stay\n")
             while numberEntered not in ["1", "2"]:
-                numberEntered = input("\n  Please enter:\n     1: Hit.\n\
-     2: Stay.\n")
+                numberEntered = input("\n  Please enter:\n     1: Hit\n\
+     2: Stay\n")
             # Try/Except to check whether is a number or not
             try:
                 numberEntered = int(numberEntered)
@@ -223,20 +226,25 @@ class blackJackGame:
                 userHand.addCard(deck.dealCard(1))
                 cardDealerHand.display()
                 userHand.display()
-                # To check if there is any winners
-                self.winnerCheck(cardDealerHand, userHand)
+                
             elif numberEntered is 2:
+                cardDealerHandValue = cardDealerHand.displayValue()
+                userHandValue = userHand.displayValue()
+                # This will add a card to the dealer if total is < 17
+                while cardDealerHandValue < 17:
+                    cardDealerHand.addCard(deck.dealCard(1))
+                    cardDealerHandValue = cardDealerHand.displayValue()
                 # To check if there is any winners
-                self.winnerCheck(cardDealerHand, userHand, gameOver=True)
+                
                 break
-
+        self.winnerCheck(cardDealerHand, userHand, gameOver=True)
         print()
         print("*" * 50)
         print("*" * 50)
-        print(f"\n     BlackJack Game is over \n")
-
-        cardDealerHand.display()
-
+        print(f"\n              BlackJack Game is over\n")
+        print("*" * 50)
+        print()
+        cardDealerHand.display(displayDealersHiddenCard=True)
         userHand.display()
         print()
         print("*" * 50)
@@ -244,8 +252,8 @@ class blackJackGame:
         print("\n  Please select from the following options:")
         # While loop to loop through the try/except and if statements
         while True:
-            numberEntered = input("\n     1: Main Menu.\n\
-     2: Play again.\n")
+            numberEntered = input("\n     1: Main Menu\n\
+     2: Play again\n")
             # Try/Except to check whether is a number or not
             try:
                 numberEntered = int(numberEntered)
@@ -267,10 +275,10 @@ class blackJackGame:
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
         if not gameOver:
             if userHand.displayValue() > 21:
-                print(f"  {USERNAME} you have lost!")
+                print(f"  {USERNAME} you bust!")
                 return True
             elif cardDealerHand.displayValue() > 21:
-                print(f"  Dealer has lost!\n  {USERNAME} you have won!")
+                print(f"  Dealer has bust!\n  {USERNAME} you have won!")
                 return True
             elif cardDealerHand.blackJack() and userHand.blackJack():
                 print("  No Winners\n  It's a tie!")
@@ -282,7 +290,11 @@ class blackJackGame:
                 print(f"  Dealer has lost!\n  {USERNAME} you have won!")
                 return True
         else:
-            if userHand.displayValue() > cardDealerHand.displayValue():
+            if userHand.displayValue() > 21:
+                print(f"  {USERNAME} you bust!")
+            elif cardDealerHand.displayValue() > 21:
+                print(f"  Dealer has bust!\n  {USERNAME} you have won!")
+            elif userHand.displayValue() > cardDealerHand.displayValue():
                 print(f"  Dealer has lost!\n  {USERNAME} you have won!")
             elif cardDealerHand.displayValue() == userHand.displayValue():
                 print("  No winners.\n  It's a tie!")
@@ -304,7 +316,7 @@ def mainMenu():
 
     # While loop to loop through the try/except and if statements
     while True:
-        numberEntered = input("\n     1: Instructions.\n     2: Start.\n")
+        numberEntered = input("\n     1: Instructions\n     2: Start\n")
         # Try/Except to check whether is a number or not
         try:
             numberEntered = int(numberEntered)
