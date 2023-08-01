@@ -195,7 +195,8 @@ class blackJackGame:
 
         # if statement to check if there is any winners
         # as the first 2 cards are dealt
-        self.winnerCheck(cardDealerHand, userHand)
+        if self.winnerCheck(cardDealerHand, userHand):
+            pass
 
         while userHand.displayValue() < 21 and \
                 cardDealerHand.displayValue() < 21:
@@ -229,7 +230,6 @@ class blackJackGame:
                 self.winnerCheck(cardDealerHand, userHand, gameOver=True)
                 break
 
-        self.winnerCheck(cardDealerHand, userHand)
         print()
         print("*" * 50)
         print("*" * 50)
