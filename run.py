@@ -61,14 +61,14 @@ class cardSelected:
 
     # to create and return a readable string of the card
     def __str__(self):
-        return f"    {self.cardRank['rank']} of {self.cardSuit}"
+        return f"    {self.cardRank['rank']} {self.cardSuit}"
 
 
 class cardsDeck:
     def __init__(self):
         self.cards = []
         # List of card suits
-        cardSuits = ["Clubs", "Diamonds", "Hearts", "Spades"]
+        cardSuits = ["♣", "♦", "♥", "♠"] 
         # Dictionary list with card ranks and their respective values
         cardRanks = [
             {"rank": "2", "value": 2},
