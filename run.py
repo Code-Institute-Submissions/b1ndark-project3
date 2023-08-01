@@ -1,47 +1,49 @@
-# import random, so cards can be shuffled in the game
+''' Import random, so cards can be shuffled in the game
+and Import os to clear terminal '''
 import random
-# import os to clear terminal
 import os
 
-# Variable
+''' Variable '''
 USERNAME = ""
 
 
-# Function to clear screen
 def clean():
+    '''
+    This function when called will clear screen
+    This is to improve User experience
+    '''
     os.system("clear")
 
 
-# Function to show instructions
 def instructions():
+    '''
+    This function will open instructions
+    User will be able to understand the game
+    Theres two options Start/Exit
+    '''
     clean()
-    print("*" * 50)
-    print(f"\n   {USERNAME} welcome to the instructions! \n")
-    print("*" * 50)
-    print("*" * 50)
-    print("\n    Main goal is to either get 21 points\n\
-      or to be as close as possible\n\
-        \n    If you go above 21 you automatically\n\
-               lose the game\n")
-    print("      The dealer will ask you whether\n\
-          you want to Hit or Stay\n")
-    print("     2 = 2, 3 = 3, 4 = 4, 5 = 5, 6 = 6\n\
-    7 = 7, 8 = 8, 9 = 9, J = 10, Q = 10\n\
-      K = 10, and finally A = 1 or 11\n")
-    print("    The main goal is to beat the dealer!\n")
-    print("*" * 50)
+    print("*" * 70)
+    print(f"\n             {USERNAME} welcome to the instructions! \n")
+    print("*" * 70)
+    print("\n Main goal is to either get 21 points or to be as close as possible\n\
+        If you go above 21 you automatically lose the game\n")
+    print("      The dealer will ask you whether you want to Hit or Stay\n")
+    print("   2 = 2, 3 = 3, 4 = 4, 5 = 5, 6 = 6, 7 = 7, 8 = 8, 9 = 9, J = 10\n\
+             Q = 10 K = 10, and finally A = 1 or 11\n")
+    print("               The main goal is to beat the dealer!\n")
+    print("*" * 70)
 
     print("\n  Please select from the following options:")
-    # While loop to loop through the try/except and if statements
+    ''' While loop to loop through the try/except and if statements '''
     while True:
         numberEntered = input("\n     1: Start\n     2: Exit\n")
-        # Try/Except to check whether is a number or not
+        ''' Try/Except to check whether is a number or not '''
         try:
             numberEntered = int(numberEntered)
-        except:
+        except Exception:
             print("\n         ****Invalid Input Entered****")
-        # If statement to check what option user has selected
-        # Loop will break once option is selected
+        ''' If statement to check what option user has selected '''
+        ''' Loop will break once option is selected '''
         if numberEntered == 1:
             game = blackJackGame()
             game.playGame()
@@ -54,12 +56,12 @@ def instructions():
 
 
 class cardSelected:
-    # init function to create an object in this case, to create a card
+    ''' init function to create an object in this case, to create a card '''
     def __init__(self, cardSuit, cardRank):
         self.cardSuit = cardSuit
         self.cardRank = cardRank
 
-    # to create and return a readable string of the card
+    ''' to create and return a readable string of the card '''
     def __str__(self):
         return f"    {self.cardRank['rank']} {self.cardSuit}"
 
@@ -211,7 +213,7 @@ class blackJackGame:
             # Try/Except to check whether is a number or not
             try:
                 numberEntered = int(numberEntered)
-            except:
+            except Exception:
                 print("\n        ****Invalid Input Entered****")
             # If statement to check what option user has selected
             # Loop will break once option is selected
@@ -226,7 +228,6 @@ class blackJackGame:
                 userHand.addCard(deck.dealCard(1))
                 cardDealerHand.display()
                 userHand.display()
-                
             elif numberEntered is 2:
                 cardDealerHandValue = cardDealerHand.displayValue()
                 userHandValue = userHand.displayValue()
@@ -234,10 +235,10 @@ class blackJackGame:
                 while cardDealerHandValue < 17:
                     cardDealerHand.addCard(deck.dealCard(1))
                     cardDealerHandValue = cardDealerHand.displayValue()
-                # To check if there is any winners
-                
                 break
+
         self.winnerCheck(cardDealerHand, userHand, gameOver=True)
+
         print()
         print("*" * 50)
         print("*" * 50)
@@ -257,7 +258,7 @@ class blackJackGame:
             # Try/Except to check whether is a number or not
             try:
                 numberEntered = int(numberEntered)
-            except:
+            except Exception:
                 print("\n         ****Invalid Input Entered****")
             # If statement to check what option user has selected
             # Loop will break once option is selected
@@ -320,7 +321,7 @@ def mainMenu():
         # Try/Except to check whether is a number or not
         try:
             numberEntered = int(numberEntered)
-        except:
+        except Exception:
             print("\n         ****Invalid Input Entered****")
         # If statement to check what option user has selected
         # Loop will break once option is selected
