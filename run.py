@@ -223,12 +223,11 @@ class blackJackGame:
                 cardDealerHand.display()
                 userHand.display()
                 # To check if there is any winners
-                
+                self.winnerCheck(cardDealerHand, userHand)
             elif numberEntered is 2:
                 # To check if there is any winners
                 self.winnerCheck(cardDealerHand, userHand, gameOver=True)
                 break
-        self.winnerCheck(cardDealerHand, userHand)
 
     # Function to check if there is a winner or a tie
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
