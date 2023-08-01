@@ -68,7 +68,7 @@ class cardsDeck:
     def __init__(self):
         self.cards = []
         # List of card suits
-        cardSuits = ["♣", "♦", "♥", "♠"] 
+        cardSuits = ["♣", "♦", "♥", "♠"]
         # Dictionary list with card ranks and their respective values
         cardRanks = [
             {"rank": "2", "value": 2},
@@ -228,6 +228,40 @@ class blackJackGame:
                 # To check if there is any winners
                 self.winnerCheck(cardDealerHand, userHand, gameOver=True)
                 break
+
+        self.winnerCheck(cardDealerHand, userHand)
+        print()
+        print("*" * 50)
+        print("*" * 50)
+        print(f"\n     BlackJack Game is over \n")
+
+        cardDealerHand.display()
+
+        userHand.display()
+        print()
+        print("*" * 50)
+        print("*" * 50)
+        print("\n  Please select from the following options:")
+        # While loop to loop through the try/except and if statements
+        while True:
+            numberEntered = input("\n     1: Main Menu.\n\
+     2: Play again.\n")
+            # Try/Except to check whether is a number or not
+            try:
+                numberEntered = int(numberEntered)
+            except:
+                print("\n         ****Invalid Input Entered****")
+            # If statement to check what option user has selected
+            # Loop will break once option is selected
+            if numberEntered == 1:
+                mainMenu()
+                break
+            elif numberEntered == 2:
+                game = blackJackGame()
+                game.playGame()
+                break
+            else:
+                print("  Please select a number from the options:")
 
     # Function to check if there is a winner or a tie
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
