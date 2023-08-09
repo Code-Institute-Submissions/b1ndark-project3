@@ -1,16 +1,16 @@
 # **BlackJack Game**
 
-## This website is a [](),
+## This is a [Blackjack game](),
 
-<p>
-<p>
-<p>
-<p>
+<p> This is a Blackjack game and is targeted for anyone that may want to challenge the dealer
+<p> The objective here is to beat the dealer
+<p> By obtaining 21 points or as close as possible to it
+<p> If you get more than 21 points, you bust.
 <br>
 
-![image]()
+![image](assets/images/readme/amiresponsive.png)
 
-[]()
+[Blackjack game on Am I Responsive](https://ui.dev/amiresponsive?url=https://blackjack-game20-2cd616944bfc.herokuapp.com/)
 
 ---
 
@@ -24,7 +24,7 @@
       - [Game]()
   - [Programs and tools used](#programs-and-tools-used)
   - [Languages](#languages)
-    - [Python]()  
+    - [Python](#python)  
   - [Accessibility](#accessibility)
     - [Lighthouse](#lighthouse)
       - [Desktop Page](#desktop-page)
@@ -135,6 +135,7 @@ Colours used:
 - [Spell Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - To check spelling.
 - [Google Tools](https://developer.chrome.com/docs/devtools/) - to check website styling and responsiveness.
 - [Gyazo](https://gyazo.com/) - To take Screenshots.
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) - To check for python code errors
 
 [Back to the top](#blackjack-game)
 
@@ -144,7 +145,7 @@ Colours used:
 
 - ### Python
 
-  - 
+  - Python code passes with no errors when checked on CI Python Linter
 
     -  
     ![]()  
@@ -196,7 +197,7 @@ I :
 
 ---
 
-### Main
+### Username
 
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
