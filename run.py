@@ -1,7 +1,16 @@
 ''' Import random, so cards can be shuffled in the game
-and Import os to clear terminal '''
+and import os to clear terminal '''
 import random
 import os
+
+'''
+I have used some tutorials to help me build the Blackjack game
+I will leave their links below:
+https://www.youtube.com/watch?v=mpL0Y01v6tY&ab_channel=CodeCoach
+https://www.youtube.com/watch?v=aryte85bt_M&t=140s&ab_channel=Beau%28previouslyZizyo%29
+The next video to help me with the game rules:
+https://www.youtube.com/watch?v=eyoh-Ku9TCI&ab_channel=wikiHow
+'''
 
 ''' Variable '''
 USERNAME = ""
@@ -18,8 +27,9 @@ def clean():
 def instructions():
     '''
     This function will open instructions
-    User will be able to understand the game
-    Theres two options Start/Exit
+    User will find the instructions and be able to understand the game
+    There are two options Start/Exit
+    I have used Try/except to check if a number has been entered or not
     '''
     clean()
     print("*" * 80)
@@ -71,6 +81,12 @@ class cardSelected:
 
 class cardsDeck:
     def __init__(self):
+        '''
+        Here a cards deck of 52 cards will be created
+        where they will be associated with the respective suit
+        by appending them to a list of cards
+        ♣ - clubs, ♦ - diamonds, ♥ - hearts, ♠ - spades
+        '''
         self.cards = []
         ''' List of card suits '''
         cardSuits = ["♣", "♦", "♥", "♠"]
@@ -96,19 +112,21 @@ class cardsDeck:
             for cardRank in cardRanks:
                 self.cards.append(cardSelected(cardSuit, cardRank))
 
-    ''' To shuffle the cards list '''
     def shuffleCards(self):
-        ''' When shuffling cards it will check if theres more than one left '''
+        '''
+        To shuffle the cards list
+        When shuffling cards it will check if there's more than one card left
+        '''
         if len(self.cards) == 1:
             pass
         else:
             random.shuffle(self.cards)
 
-    '''
-    Function to deal cards, once they are dealt they also will be popped
-    And moved to cardsDealt
-    '''
     def dealCard(self, number):
+        '''
+        Function to deal cards, once they are dealt, they also will be popped
+        And moved to cardsDealt
+        '''
         cardsDealt = []
         for i in range(number):
             ''' To check whether there are any cards left to be removed '''
@@ -126,12 +144,12 @@ class handCard:
         self.value = 0
         self.cardDealer = cardDealer
 
-    ''' Extend method to add each card to cardList '''
     def addCard(self, cardList):
+        ''' Extend method to add each card to cardList '''
         self.cards.extend(cardList)
 
-    ''' Funtion to check values and if there is an ace '''
     def cardValueCalculate(self):
+        ''' Function to check values and if there is an ace '''
         self.value = 0
         self.ace = False
         ''' Check the cards value and calculate the total of the same ones '''
@@ -150,17 +168,23 @@ class handCard:
             if self.value > 21:
                 self.value -= 10
 
-    ''' To calculate the value of the cards '''
     def displayValue(self):
+        '''
+        This function will calculate the value of the
+        cards that are displayed
+        '''
         self.cardValueCalculate()
         return self.value
 
-    ''' If is 21 then is a BlackJack '''
     def blackJack(self):
+        '''
+        Function will check if the total is 21
+        and if it is, then is a Blackjack
+        '''
         return self.displayValue() == 21
 
-    ''' Function to display the cards and their total value '''
     def display(self, displayDealersHiddenCard=False):
+        ''' Function to display the cards and their total value '''
         if self.cardDealer is True:
             ''' If is cardDealer, it will print this '''
             print(f'{"  Dealer cards are:"}')
@@ -183,6 +207,14 @@ class handCard:
 
 class blackJackGame:
     def playGame(self):
+        '''
+        This function will start the game
+        The game will start with two cards dealt
+        If there is no blackjack at the beginning,
+        the user will be able to decide whether to hit or stay
+        At the end the user will be able to decide if wants to play again
+        or go back to main menu
+        '''
         clean()
         print("*" * 80)
         print(f"\n                      {USERNAME} let's start the game! \n")
@@ -207,7 +239,7 @@ class blackJackGame:
         userHand.display()
 
         '''
-         if statement to check if there is any winners
+         if statement to check if there are any winners
          as the first 2 cards are dealt
         '''
         self.winnerCheck(cardDealerHand, userHand)
@@ -250,7 +282,7 @@ class blackJackGame:
 
         print()
         print("*" * 80)
-        print(f"\n                         BlackJack Game is over\n")
+        print(f"\n                         Blackjack Game is over\n")
         print("*" * 80)
         print()
         cardDealerHand.display(displayDealersHiddenCard=True)
@@ -283,7 +315,6 @@ class blackJackGame:
             else:
                 print("  Please select a number from the options:")
 
-    # Function to check if there is a winner or a tie
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
         '''
         This function will check for winner, whether is the cardDealer
@@ -328,7 +359,7 @@ def mainMenu():
     '''
     clean()
     print("*" * 80)
-    print(f"\n                  {USERNAME} welcome to BlackJack Game \n")
+    print(f"\n                  {USERNAME} welcome to Blackjack Game \n")
     print("*" * 80)
     print("*" * 80)
     print("\n  Please select from the following options:")
@@ -358,12 +389,12 @@ def mainMenu():
 def userName():
     '''
     This function will ask the user to type the username
-    While loop to loop through the try/except and if statements
+    While loop to loop through the if statements
     To check whether username has been entered or not
     '''
     clean()
     print("*" * 80)
-    print("\n                        Welcome to BlackJack Game \n")
+    print("\n                        Welcome to Blackjack Game \n")
     print("*" * 80)
     print("*" * 80)
     '''
