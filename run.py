@@ -258,7 +258,7 @@ class blackJackGame:
         self.winnerCheck(cardDealerHand, userHand, gameOver=True)
         print()
         print("*" * 80)
-        print("\n  Please select from the following options:")
+        print("  Please select from the following options:")
 
         '''
         While loop to loop through the try/except and if statements
@@ -267,7 +267,7 @@ class blackJackGame:
         Loop will break once option is selected
         '''
         while True:
-            numberEntered = input("\n     1: Main Menu\n\
+            numberEntered = input("     1: Main Menu\n\
      2: Play again\n")
             try:
                 numberEntered = int(numberEntered)
