@@ -263,7 +263,7 @@ class blackJackGame:
                 numberEntered = int(numberEntered)
             except Exception:
                 print("\n        ****Invalid Input Entered****")
-            if numberEntered is 1:
+            if numberEntered == 1:
                 cardDealerHandValue = cardDealerHand.displayValue()
                 userHandValue = userHand.displayValue()
                 ''' This will add a card to the dealer if total is < 17 '''
@@ -274,7 +274,7 @@ class blackJackGame:
                 userHand.addCard(deck.dealCard(1))
                 cardDealerHand.display()
                 userHand.display()
-            elif numberEntered is 2:
+            elif numberEntered == 2:
                 cardDealerHandValue = cardDealerHand.displayValue()
                 userHandValue = userHand.displayValue()
                 ''' This will add a card to the dealer if total is < 17 '''
