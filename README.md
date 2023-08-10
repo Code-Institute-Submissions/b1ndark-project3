@@ -147,8 +147,8 @@ Colours used:
 
   - Python code passes with no errors when checked on CI Python Linter
 
-    -  
-    ![]()  
+    - run.py page - PASS
+    ![image](assets/images/readme/validator/cipythonlinter.png)  
     <br>
 
 

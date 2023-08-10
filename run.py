@@ -13,6 +13,8 @@ https://www.youtube.com/watch?v=mpL0Y01v6tY&ab_channel=CodeCoach
 https://www.youtube.com/watch?v=aryte85bt_M&t=140s&ab_channel=Beau%28previouslyZizyo%29
 The next video to help me with the game rules:
 https://www.youtube.com/watch?v=eyoh-Ku9TCI&ab_channel=wikiHow
+To import colorana:
+https://www.youtube.com/watch?v=u51Zjlnui4Y&ab_channel=TechWithTim
 '''
 
 ''' Variable '''
