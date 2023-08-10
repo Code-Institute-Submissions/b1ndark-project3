@@ -1,7 +1,10 @@
-''' Import random, so cards can be shuffled in the game
-and import os to clear terminal '''
+''' Import random, so cards can be shuffled in the game, import os
+to clear terminal and also import colorama to add colours to the game '''
 import random
 import os
+import colorama
+from colorama import Fore
+colorama.init(autoreset=True)
 
 '''
 I have used some tutorials to help me build the Blackjack game
@@ -89,7 +92,7 @@ class cardsDeck:
         '''
         self.cards = []
         ''' List of card suits '''
-        cardSuits = ["♣", "♦", "♥", "♠"]
+        cardSuits = ["♣", Fore.RED + "♦", Fore.RED + "♥", "♠"]
         ''' Dictionary list with card ranks and their respective values '''
         cardRanks = [
             {"rank": "2", "value": 2},
@@ -322,31 +325,35 @@ class blackJackGame:
         '''
         if not gameOver:
             if userHand.displayValue() > 21:
-                print(f"  {USERNAME} you bust!")
+                print(f"  {Fore.RED}{USERNAME} you bust!")
                 return True
             elif cardDealerHand.displayValue() > 21:
-                print(f"  Dealer has bust!\n  {USERNAME} you have won!")
+                print(f"  {Fore.GREEN}Dealer has bust!\
+                \n  {USERNAME} you have won!")
                 return True
             elif cardDealerHand.blackJack() and userHand.blackJack():
-                print("  No Winners\n  It's a tie!")
+                print(f"  {Fore.RED}No Winners\n  It's a tie!")
                 return True
             elif cardDealerHand.blackJack():
-                print(f"  {USERNAME} you have lost!")
+                print(f"  {Fore.RED}{USERNAME} you have lost!")
                 return True
             elif userHand.blackJack():
-                print(f"  Dealer has lost!\n  {USERNAME} you have won!")
+                print(f"  {Fore.GREEN}Dealer has lost!\
+                \n  {USERNAME} you have a Blackjack!")
                 return True
         else:
             if userHand.displayValue() > 21:
-                print(f"  {USERNAME} you bust!")
+                print(f"  {Fore.RED}{USERNAME} you bust!")
             elif cardDealerHand.displayValue() > 21:
-                print(f"  Dealer has bust!\n  {USERNAME} you have won!")
+                print(f"  {Fore.GREEN}Dealer has bust!\
+                \n  {USERNAME} you have won!")
             elif userHand.displayValue() > cardDealerHand.displayValue():
-                print(f"  Dealer has lost!\n  {USERNAME} you have won!")
+                print(f"  {Fore.GREEN}Dealer has lost!\
+                \n  {USERNAME} you have won!")
             elif cardDealerHand.displayValue() == userHand.displayValue():
-                print("  No winners.\n  It's a tie!")
+                print(f"  {Fore.RED}No winners.\n  It's a tie!")
             else:
-                print(f"  {USERNAME} you have lost!")
+                print(f"  {Fore.RED}{USERNAME} you have lost!")
             return True
         return False
 
