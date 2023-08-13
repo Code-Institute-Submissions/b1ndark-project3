@@ -44,39 +44,36 @@
 
 Visitors:
 
-- 
-- 
-- 
+- Users will be presented with a Blackjack game, which is running on Heroku
+- The instructions are provided to help understand the game
+- Colours have been added to help distinguish the winner and loser
 
 Goals:
 
-- 
-- 
-- 
-- 
+- The player will have to beat the dealer in order to win
+- You are suppose to have a BLackjack = 21 points or to have as close as possible to 21 points to beat the dealer
+- If you lose play again to beat the dealer
+- The main goal is to have fun :)
 
-The website:
+The game:
 
-- 
-- 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-- 
-    - 
-    - 
-    - 
-    - 
-- 
-    - 
-    - 
-    - 
-    - 
-- 
-- 
+- Starting at the beginning with a page asking you to type your username
+- After entering your username, it will take you to a main menu with two options:
+    - INSTRUCTIONS -  to take you to the instructions menu
+    - START - to start the Blackjack game  
+- If you select the instructions it will take you to another menu where instructions are displayed and two options to select:
+    - START - to start the game
+    - EXIT - to take you back to main menu  
+- Once you start the game the dealer will give you and himself two cards, the second card from the dealer will be hidden until the game is over
+- The gamne will check for Blackjacks, if there is no Blackjack the game will continue
+- Two options will be displayed:
+    - HIT - to request another card
+    - STAY - to check results
+- If you have selected Hit, the game will check for winners, if there is no winner the two options will be displayed again
+- If you select Stay, the game will check for winners.
+- Once the game is over two options will appear:
+    - MAIN MENU - to take you back to main menu
+    - PLAY AGAIN - to start a new game :)
 
 [Back to the top](#blackjack-game)
 
