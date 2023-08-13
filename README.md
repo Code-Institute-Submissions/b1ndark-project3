@@ -35,8 +35,7 @@
   - [Credits](#credits)
     - [Content](#content-1)
     - [Media](#media)  
-
-  - [Acknowledgments](#acknowledgments)
+  - [Acknowledgments](#acknowledgments)  
 
 ---
 
@@ -85,11 +84,18 @@ The game:
 
 Colours used:
 
-- Colours used are GREEN and RED, they were imported from colorama 
+- Colours used are GREEN and RED, they were imported from colorama
 ```
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
+```
+- In order to work had to install it and freeze requirements.txt
+```
+pip3 install colorama
+```
+```
+pip freeze > requirements.txt
 ```
 
 <br>
@@ -328,8 +334,8 @@ I :
 
 ## Acknowledgments
 
-- 
-- 
-- 
+- I would like to thank my mentor Graeme Taylor for helping me along the way in completing my Third milestone project.
+- I would like to thank the tutors from Code Institute for helping me solving the issues that I had with the project.
+- I also would like to thank my family and friends for helping me with the tests.
 
 [Back to the top](#blackjack-game)
