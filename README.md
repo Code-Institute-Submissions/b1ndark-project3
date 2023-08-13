@@ -83,16 +83,15 @@ The game:
 
 ### Typography
 
-Fonts used came from []():
-
-- []()
-- []()
-
 Colours used:
 
-- 
+- Colours used are GREEN and RED, they were imported from colorama 
+```
+import colorama
+from colorama import Fore
+colorama.init(autoreset=True)
+```
 
-  ![image]()
 <br>
 
 [Back to the top](#blackjack-game)
@@ -104,19 +103,53 @@ Colours used:
 
   <br>
 
-- #### Main Menu Container
+- #### Username Container
 
-    - 
-    - 
-    - 
-      - 
-      - 
-      - 
-      - 
-      -  
+    - Welcome message displayed to the player
+    - Username requested in order to progress
       <br>
 
-      ![]()
+      ![image](assets/images/readme/features/username.png)
+
+- #### Main Menu Container
+
+    - Welcome message displayed to the player
+    - Two options displayed for the user to select
+        - Instructions
+        - Start
+      <br>
+
+      ![image](assets/images/readme/features/mainmenu.png)
+
+- #### Instructions Container
+
+    - Instructions displayed for the player to help understand the game
+    - Two options displayed for the user to select
+        - Start
+        - Exit
+      <br>
+
+      ![image](assets/images/readme/features/instructions.png)
+
+- #### Blackjack game Container
+
+    - The game starts and two cards are given to the player and dealer
+    - Two options displayed for the user to select
+        - Hit
+        - Stay
+      <br>
+
+      ![image](assets/images/readme/features/blackjackgame.png)
+
+- #### Game is Over Container
+
+    - Once the game is over, the winner is annouced
+    - Two options displayed for the user to select
+        - Main Menu
+        - Play Again
+      <br>
+
+      ![image](assets/images/readme/features/gameisover.png)
 
  
 
