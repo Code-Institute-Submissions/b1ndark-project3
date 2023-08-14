@@ -90,12 +90,12 @@ import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
 ```
-- In order to work had to install it and freeze requirements.txt
+- In order to work had to install colorama and freeze requirements.txt
 ```
 pip3 install colorama
 ```
 ```
-pip freeze > requirements.txt
+pip3 freeze > requirements.txt
 ```
 
 <br>
@@ -192,23 +192,6 @@ pip freeze > requirements.txt
 
 ---
 
-## Accessibility
-
-I :
-
-- 
-- 
-- 
-- 
-- 
-- 
-
-![image]()
-
-[Back to the top](#blackjack-game)
-
----
-
 ## Testing
 
 - 
@@ -276,7 +259,7 @@ I :
 7. Once master branch is selected, wait a moment and it will provide a page link to the website.  
 <br>
   
-- The live link can be found here - [My Website]().
+- The live link can be found here - [Blackjack Game](https://blackjack-game20-2cd616944bfc.herokuapp.com/).
   <br>
 
 ### Local Deployment
@@ -285,13 +268,14 @@ I :
 
   1. Open Github.
   2. Log in or Sign up.
-  3. Look for my repository []().
+  3. Look for my repository [Blackjack](https://github.com/b1ndark/project3).
   4. Last on the right corner you will find the fork button(click on it).
 
 #### Clone the repository
+
   1. Open Github
   2. Log in or Sign up
-  3. Look for my repository []()
+  3. Look for my repository [Blackjack](https://github.com/b1ndark/project3)
   4. Look for code button next to the gitpod button at the top right(click on it).
   5. A window will pop up with options for you to select to clone it with such as HTTPS, SSH or GitHub CLI.
   6. Once selected copy the link that is shown.
@@ -299,7 +283,24 @@ I :
   8. Type ```git clone``` in the terminal and paste the copied repository link.
   9. After all that just Press enter to create the clone.
 
+#### Heroku deployment
 
+  1. Within your opened project in codeanywhere or gitpod you will have to freeze requirements.txt file  
+    - Type the command "pip3 freeze > requirements.txt"
+  2. Make sure you commit and push it
+  3. Open and login to your Heroku account
+  4. Once your dashboard opens, on the top right hand corner click on New and than on the Create new app
+  5. Give your app a name and select the location
+  6. Once created, the app dashboard will open.
+  7. Select Settings tab
+  8. Go down to Config Vars and add to Key "PORT" and to value "8000"
+  9. Next go to Buildpacks and add "heroku/python" and "heroku/nodejs"  
+    - Make sure they are in this order first "heroku/python" and then in second "heroku/nodejs"
+  10. After all that select Deploy tab
+  11. Go down to Deployment method and select GitHub
+  12. Connect to your GitHub and enter the repository
+  13. Once is connected you can either have automatic or manual deployment
+  14. Choose your prefered one by pressing deploy
 
 
 [Back to the top](#blackjack-game)
