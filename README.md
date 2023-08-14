@@ -25,6 +25,7 @@
   - [Programs and tools used](#programs-and-tools-used)
   - [Languages](#languages)
     - [Python](#python)  
+  - [Flow Chart](#flow-chart)
   - [Accessibility](#accessibility)
     - [Lighthouse](#lighthouse)
       - [Desktop Page](#desktop-page)
@@ -181,11 +182,25 @@ pip3 freeze > requirements.txt
 
 - ### Python
 
-  - Python code passes with no errors when checked on CI Python Linter
+    - Python code passes with no errors when checked on CI Python Linter
+        - run.py page - PASS  
+      <br>
 
-    - run.py page - PASS
-    ![image](assets/images/readme/validator/cipythonlinter.png)  
+      ![image](assets/images/readme/validator/cipythonlinter.png)
+      <br>  
+
+
+[Back to the top](#blackjack-game)
+
+---
+
+## Flow Chart
+
+- To help me with the logic and to create the game I have used [Lucidchart](https://www.lucidchart.com/) to create a flow chart.  
     <br>
+
+    ![image](assets/images/readme/diagram/blackJackdiagram.png)
+    <br>  
 
 
 [Back to the top](#blackjack-game)
@@ -220,6 +235,7 @@ pip3 freeze > requirements.txt
 
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
+| Title | Welcome message to the player | App started | welcome message displayed | pass |
 | Input | For user to enter username | username entered | value taken and Main Menu shown | pass |
 
  <br>
@@ -228,9 +244,9 @@ pip3 freeze > requirements.txt
 
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
-| Title | welcome message to the player | username entered | welcome message with username in it | pass |
-| Input | For user to type number 1 option | option 1 entered | value taken and Instructions shown | pass |
-| Input | For user to type number 2 option | option 2 entered | value taken and Game started | pass |
+| Title | Welcome message to the player | username entered | Welcome message with username in it displayed | pass |
+| Input | For user to type number 1 Instructions option | option 1 entered | value taken and Instructions shown | pass |
+| Input | For user to type number 2 Start option | option 2 entered | value taken and Game started | pass |
 
  <br>
 
@@ -238,6 +254,8 @@ pip3 freeze > requirements.txt
 
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
+| Title | Welcome to instructions message to the player | Openned instructions | Welcome to instructions message with username in it displayed | pass |
+| Instructions | To display instructions for the player | Openned instructions | Instructions displayed | pass |
 | Input | For user to type number 1 option | option 1 entered | value taken and Game started | pass |
 | Input | For user to type number 2 option | option 2 entered | value taken and Main menu shown | pass |
 
@@ -247,8 +265,16 @@ pip3 freeze > requirements.txt
 
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
+| Title | Blackjack Game message | Start the game | Message displayed | pass |
+| Dealer cards | two cards given | Start the game | Dealer cards displayed | pass |
+| Dealer card number 2 | Second card hidden | Start the game | Second card hidden | pass |
+| Player cards | two cards given | Start the game | Player cards displayed | pass |
 | Input | For user to type number 1 option | option 1 entered | value taken and and another card displayed | pass |
 | Input | For user to type number 2 option | option 2 entered | value taken and check results | pass |
+| End game | Game is over message | Running the game till it finishes | Game is over message displayed | pass |
+| Check winner | winner message | After the game is over | message with winner displayed | pass |
+| Input | For user to type number 1 Main menu option | option 1 entered | value taken and go back to main menu | pass |
+| Input | For user to type number 2 Start again option | option 2 entered | value taken and Start the game again | pass |
 
  <br>
 
