@@ -220,7 +220,35 @@ pip3 freeze > requirements.txt
 
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
-|  |  |  |  |  |
+| Input | For user to enter username | username entered | value taken and Main Menu shown | pass |
+
+ <br>
+
+ ### Main Menu
+
+| Feature | Expected Outcome | Testing | Result | Pass or Fail |
+| --- | --- | --- | --- | --- |
+| Title | welcome message to the player | username entered | welcome message with username in it | pass |
+| Input | For user to type number 1 option | option 1 entered | value taken and Instructions shown | pass |
+| Input | For user to type number 2 option | option 2 entered | value taken and Game started | pass |
+
+ <br>
+
+  ### Instructions
+
+| Feature | Expected Outcome | Testing | Result | Pass or Fail |
+| --- | --- | --- | --- | --- |
+| Input | For user to type number 1 option | option 1 entered | value taken and Game started | pass |
+| Input | For user to type number 2 option | option 2 entered | value taken and Main menu shown | pass |
+
+ <br>
+
+   ### Blackjack game
+
+| Feature | Expected Outcome | Testing | Result | Pass or Fail |
+| --- | --- | --- | --- | --- |
+| Input | For user to type number 1 option | option 1 entered | value taken and and another card displayed | pass |
+| Input | For user to type number 2 option | option 2 entered | value taken and check results | pass |
 
  <br>
 
@@ -230,8 +258,8 @@ pip3 freeze > requirements.txt
 
 ## Bugs
 
-- 
-    - 
+- The game had a bug at the end where the score was being shown, the winner/loser message was being displayed duplicate
+    - I have moved the ```self.winnerCheck(cardDealerHand, userHand, gameOver=True)``` to after of the loop
 - 
     - 
 - 
@@ -311,22 +339,18 @@ pip3 freeze > requirements.txt
 
 - ### Content
 
-    - 
-      - []()
+    - To import colorama I have followed Python Package Index and also watched a tutorial on youtube to help me understand and learn, I will leave the links below:
+      - [Python Package Index](https://pypi.org/project/colorama/)
+      - [TechWithTim](https://www.youtube.com/watch?v=u51Zjlnui4Y&ab_channel=TechWithTim)
       
-    - 
-      - []()
+    - I have watched some tutorials on Youtube that have helped me with understanding and learning the rules of the game and also new features along the project, I will leave them below:
+      - [wikiHow](https://www.youtube.com/watch?v=eyoh-Ku9TCI&ab_channel=wikiHow)
+      - [CodeCoach](https://www.youtube.com/watch?v=mpL0Y01v6tY&t=8s&ab_channel=CodeCoach)
+      - [Beau](https://www.youtube.com/watch?v=aryte85bt_M&t=140s&ab_channel=Beau)
       
-    - I have used Readme structure from my first project as a template.
+    - I have used Readme structure from my second project as a template.
 
   <br>
-
-- ### Media
-
-  - Websites used-
-
-    - []()
-    - []()
 
 
 [Back to the top](#blackjack-game)
