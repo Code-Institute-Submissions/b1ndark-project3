@@ -42,6 +42,8 @@
 
 ## **User Experience**
 
+![image](assets/images/readme/gif/blackjackgamegiphy.gif)
+
 Visitors:
 
 - Users will be presented with a Blackjack game, which is running on Heroku
@@ -107,8 +109,6 @@ pip3 freeze > requirements.txt
 
 ### Features
 
-
-  <br>
 
 - #### Username Container
 
