@@ -8,9 +8,7 @@
 <p> If you get more than 21 points, you bust.
 <br>
 
-![image](assets/images/readme/amiresponsive.png)
-
-[Blackjack game on Am I Responsive](https://ui.dev/amiresponsive?url=https://blackjack-game20-2cd616944bfc.herokuapp.com/)
+![image](assets/images/readme/gif/blackjackgamegiphy.gif)
 
 ---
 
@@ -41,8 +39,6 @@
 ---
 
 ## **User Experience**
-
-![image](assets/images/readme/gif/blackjackgamegiphy.gif)
 
 Visitors:
 
@@ -209,22 +205,18 @@ pip3 freeze > requirements.txt
 
 ## Testing
 
-- 
-  - 
-  - 
-  - 
-  - 
-- 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-- 
-- 
-- 
-- 
+- The Blackjack game has been tested and it works on different types of computers with different browsers:
+  - Chrome
+  - Safari
+  - Microsoft Edge
+  - Firefox
+- It has been tested and work on different mobile phone brands:
+  - Realme x2
+  - Xiaomi note 8
+  - Hauwei p30 lite
+  - Poco F5 pro
+- Tests were carry out by myself, friends and family, different devices from PCs, laptops, tablets to mobile phones.
+- All functions work as they should.
  <br>
 
 [Back to the top](#blackjack-game)
@@ -235,7 +227,9 @@ pip3 freeze > requirements.txt
 
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
-| Title | Welcome message to the player | App started | welcome message displayed | pass |
+| Title | Welcome message to the player | App started | Welcome message displayed | pass |
+| Input | For user to enter username | numbers entered | 'Only letters accepted' message displayed | pass |
+| Input | For user to enter username | blank spaces entered | 'Please enter username in order to proceed' message displayed | pass |
 | Input | For user to enter username | username entered | value taken and Main Menu shown | pass |
 
  <br>
@@ -245,6 +239,9 @@ pip3 freeze > requirements.txt
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
 | Title | Welcome message to the player | username entered | Welcome message with username in it displayed | pass |
+| Input | For user to type number 1 or 2 option | number 5 entered | 'Please select a number from the options:' message displayed | pass |
+| Input | For user to type number 1 or 2 option | Blank spaces entered | 'Invalid Input Entered' message displayed | pass |
+| Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 Instructions option | option 1 entered | value taken and Instructions shown | pass |
 | Input | For user to type number 2 Start option | option 2 entered | value taken and Game started | pass |
 
@@ -256,6 +253,9 @@ pip3 freeze > requirements.txt
 | --- | --- | --- | --- | --- |
 | Title | Welcome to instructions message to the player | Openned instructions | Welcome to instructions message with username in it displayed | pass |
 | Instructions | To display instructions for the player | Openned instructions | Instructions displayed | pass |
+| Input | For user to type number 1 or 2 option | number 5 entered | 'Please select a number from the options:' message displayed | pass |
+| Input | For user to type number 1 or 2 option | Blank spaces entered | 'Invalid Input Entered' message displayed | pass |
+| Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 option | option 1 entered | value taken and Game started | pass |
 | Input | For user to type number 2 option | option 2 entered | value taken and Main menu shown | pass |
 
@@ -269,10 +269,16 @@ pip3 freeze > requirements.txt
 | Dealer cards | two cards given | Start the game | Dealer cards displayed | pass |
 | Dealer card number 2 | Second card hidden | Start the game | Second card hidden | pass |
 | Player cards | two cards given | Start the game | Player cards displayed | pass |
+| Input | For user to type number 1 or 2 option | number 5 entered | 'Please select a number from the options:' message displayed | pass |
+| Input | For user to type number 1 or 2 option | Blank spaces entered | 'Invalid Input Entered' message displayed | pass |
+| Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 option | option 1 entered | value taken and and another card displayed | pass |
 | Input | For user to type number 2 option | option 2 entered | value taken and check results | pass |
 | End game | Game is over message | Running the game till it finishes | Game is over message displayed | pass |
 | Check winner | winner message | After the game is over | message with winner displayed | pass |
+| Input | For user to type number 1 or 2 option | number 5 entered | 'Please select a number from the options:' message displayed | pass |
+| Input | For user to type number 1 or 2 option | Blank spaces entered | 'Invalid Input Entered' message displayed | pass |
+| Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 Main menu option | option 1 entered | value taken and go back to main menu | pass |
 | Input | For user to type number 2 Start again option | option 2 entered | value taken and Start the game again | pass |
 
