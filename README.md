@@ -195,7 +195,7 @@ pip3 freeze > requirements.txt
 - To help me with the logic and to create the game I have used [Lucidchart](https://www.lucidchart.com/) to create a flow chart.  
     <br>
 
-    ![image](assets/images/readme/diagram/blackJackdiagram.png)
+    ![image](assets/images/readme/diagram/blackjackdiagram.png)
     <br>  
 
 

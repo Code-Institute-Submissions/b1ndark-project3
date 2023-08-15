@@ -38,28 +38,27 @@ def instructions():
     '''
     clean()
     print("*" * 80)
-    print(f"\n                   {USERNAME} welcome to the instructions! \n")
+    print(f"\n\t\t\t{USERNAME} welcome to the instructions! \n")
     print("*" * 80)
-    print("\n       Main goal is to either get 21 points or\
- to be as close as possible\n\
-              If you go above 21 you automatically lose the game\n")
-    print("            The dealer will ask you whether you want\
- to Hit or Stay\n")
-    print("         2 = 2, 3 = 3, 4 = 4, 5 = 5, 6 = 6, 7 = 7, 8 = 8,\
- 9 = 9, J = 10\n\
-                   Q = 10 K = 10, and finally A = 1 or 11\n")
-    print("                     The main goal is to beat the dealer!\n")
+    print("\n      Main goal is to either get 21 points or\
+ to be as close as possible\n\n\
+  \tIf you go above 21, is a bust you automatically lose the game\n\n\
+  \t   The dealer will ask you whether you want\
+ to Hit or Stay\n\n\
+ \t2 = 2, 3 = 3, 4 = 4, 5 = 5, 6 = 6, 7 = 7, 8 = 8, 9 = 9, J = 10\n\n\
+ \t\t  Q = 10 K = 10, and finally A = 1 or 11\n\n\
+ \t\t\t Enjoy and beat the dealer!\n")
     print("*" * 80)
-
-    print("\n  Please select from the following options:")
+    print("  Please select from the following options:")
     ''' While loop to loop through the try/except and if statements '''
     while True:
-        numberEntered = input("\n     1: Start\n     2: Exit\n")
+        numberEntered = input("\n     1: Start\n     2: Main Menu\n\
+     3: Exit Game\n")
         ''' Try/Except to check whether is a number or not '''
         try:
             numberEntered = int(numberEntered)
         except Exception:
-            print("\n         ****Invalid Input Entered****")
+            print("\n\t****Invalid Input Entered****")
         ''' If statement to check what option user has selected '''
         ''' Loop will break once option is selected '''
         if numberEntered == 1:
@@ -68,6 +67,9 @@ def instructions():
             break
         elif numberEntered == 2:
             mainMenu()
+            break
+        elif numberEntered == 3:
+            exit()
             break
         else:
             print("  Please select a number from the options:")
@@ -90,7 +92,7 @@ class cardsDeck:
         Here a cards deck of 52 cards will be created
         where they will be associated with the respective suit
         by appending them to a list of cards
-        ♣ - clubs, ♦ - diamonds, ♥ - hearts, ♠ - spades
+        ♣ = clubs, ♦ = diamonds, ♥ = hearts, ♠ = spades
         '''
         self.cards = []
         ''' List of card suits '''
@@ -154,7 +156,7 @@ class handCard:
         self.cards.extend(cardList)
 
     def cardValueCalculate(self):
-        ''' Function to check values and if there is an ace '''
+        ''' Function to check/calculate values and if there is an ace '''
         self.value = 0
         self.ace = False
         ''' Check the cards value and calculate the total of the same ones '''
@@ -222,7 +224,7 @@ class blackJackGame:
         '''
         clean()
         print("*" * 80)
-        print(f"\n                      {USERNAME} let's start the game! \n")
+        print(f"\n\t\t\t{USERNAME} let's start the game! \n")
         print("*" * 80)
         print("*" * 80)
 
@@ -264,7 +266,7 @@ class blackJackGame:
             try:
                 numberEntered = int(numberEntered)
             except Exception:
-                print("\n        ****Invalid Input Entered****")
+                print("\n\t****Invalid Input Entered****")
             if numberEntered == 1:
                 cardDealerHandValue = cardDealerHand.displayValue()
                 userHandValue = userHand.displayValue()
@@ -287,7 +289,7 @@ class blackJackGame:
 
         print()
         print("*" * 80)
-        print(f"\n                         Blackjack Game is over\n")
+        print(f"\n\t\t\tBlackjack Game is over\n")
         print("*" * 80)
         print()
         cardDealerHand.display(True)
@@ -305,17 +307,20 @@ class blackJackGame:
         '''
         while True:
             numberEntered = input("     1: Main Menu\n\
-     2: Play again\n")
+     2: Play again\n     3: Exit Game\n")
             try:
                 numberEntered = int(numberEntered)
             except Exception:
-                print("\n            ****Invalid Input Entered****")
+                print("\n\t****Invalid Input Entered****")
             if numberEntered == 1:
                 mainMenu()
                 break
             elif numberEntered == 2:
                 game = blackJackGame()
                 game.playGame()
+                break
+            elif numberEntered == 3:
+                exit()
                 break
             else:
                 print("  Please select a number from the options:")
@@ -368,18 +373,19 @@ def mainMenu():
     '''
     clean()
     print("*" * 80)
-    print(f"\n                  {USERNAME} welcome to Blackjack Game \n")
+    print(f"\n\t\t\t{USERNAME} welcome to Blackjack Game \n")
     print("*" * 80)
     print("*" * 80)
     print("\n  Please select from the following options:")
 
     while True:
-        numberEntered = input("\n     1: Instructions\n     2: Start\n")
+        numberEntered = input("\n     1: Instructions\n     2: Start\n\
+     3: Exit Game\n")
         ''' Try/Except to check whether is a number or not '''
         try:
             numberEntered = int(numberEntered)
         except Exception:
-            print("\n         ****Invalid Input Entered****")
+            print("\n\t****Invalid Input Entered****")
         '''
         If statement to check what option user has selected
         Loop will break once option is selected
@@ -390,6 +396,9 @@ def mainMenu():
         elif numberEntered == 2:
             game = blackJackGame()
             game.playGame()
+            break
+        elif numberEntered == 3:
+            exit()
             break
         else:
             print("  Please select a number from the options:")
@@ -403,7 +412,7 @@ def userName():
     '''
     clean()
     print("*" * 80)
-    print("\n                        Welcome to Blackjack Game \n")
+    print("\n\t\t\tWelcome to Blackjack Game \n")
     print("*" * 80)
     print("*" * 80)
     '''
@@ -423,4 +432,5 @@ def userName():
             break
 
 
-userName()
+if __name__ == "__main__":
+    userName()
