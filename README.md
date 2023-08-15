@@ -8,7 +8,7 @@
 <p> If you get more than 21 points, you bust.
 <br>
 
-![image](assets/images/readme/gif/blackjackgamegiphy.gif)
+![image](assets/images/readme/gif/blackjackgamegif.gif)
 
 ---
 
@@ -96,6 +96,14 @@ pip3 install colorama
 ```
 pip3 freeze > requirements.txt
 ```
+
+#### Win in green
+
+![image](assets/images/readme/gif/blackjackgamewingif.gif)
+
+#### Loss in Red
+
+![image](assets/images/readme/gif/blackjackgamelossgif.gif)
 
 <br>
 
