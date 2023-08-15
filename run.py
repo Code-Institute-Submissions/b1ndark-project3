@@ -69,8 +69,8 @@ def instructions():
             mainMenu()
             break
         elif numberEntered == 3:
+            print("\t\t\tThank you, see you next time :)\n")
             exit()
-            break
         else:
             print("  Please select a number from the options:")
 
@@ -320,8 +320,8 @@ class blackJackGame:
                 game.playGame()
                 break
             elif numberEntered == 3:
+                print("\t\t\tThank you, see you next time :)\n")
                 exit()
-                break
             else:
                 print("  Please select a number from the options:")
 
@@ -398,8 +398,8 @@ def mainMenu():
             game.playGame()
             break
         elif numberEntered == 3:
+            print("\t\t\tThank you, see you next time :)\n")
             exit()
-            break
         else:
             print("  Please select a number from the options:")
 
