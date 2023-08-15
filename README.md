@@ -244,6 +244,7 @@ pip3 freeze > requirements.txt
 | Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 Instructions option | option 1 entered | value taken and Instructions shown | pass |
 | Input | For user to type number 2 Start option | option 2 entered | value taken and Game started | pass |
+| Input | For user to type number 3 Exit Game option | option 3 entered | value taken and Exit Game | pass |
 
  <br>
 
@@ -258,6 +259,7 @@ pip3 freeze > requirements.txt
 | Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 option | option 1 entered | value taken and Game started | pass |
 | Input | For user to type number 2 option | option 2 entered | value taken and Main menu shown | pass |
+| Input | For user to type number 3 Exit Game option | option 3 entered | value taken and Exit Game | pass |
 
  <br>
 
@@ -281,6 +283,7 @@ pip3 freeze > requirements.txt
 | Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 Main menu option | option 1 entered | value taken and go back to main menu | pass |
 | Input | For user to type number 2 Start again option | option 2 entered | value taken and Start the game again | pass |
+| Input | For user to type number 3 Exit Game option | option 3 entered | value taken and Exit Game | pass |
 
  <br>
 
