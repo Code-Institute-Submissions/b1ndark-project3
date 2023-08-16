@@ -64,9 +64,11 @@ The game:
 - After entering your username, it will take you to a main menu with two options:
     - INSTRUCTIONS - to take you to the instruction's menu
     - START - to start the Blackjack game  
+    - EXIT GAME - to exit game  
 - If you select the instructions, it will take you to another menu where instructions are displayed and two options to select:
     - START - to start the game
-    - EXIT - to take you back to main menu  
+    - MAIN MENU - to take you back to main menu  
+    - EXIT GAME - to exit game  
 - Once you start the game the dealer will give you and himself two cards, the second card from the dealer will be hidden until the game is over
 - The game will check for Blackjacks, if there is no Blackjack the game will continue
 - Two options will be displayed:
@@ -77,6 +79,7 @@ The game:
 - Once the game is over two options will appear:
     - MAIN MENU - to take you back to main menu
     - PLAY AGAIN - to start a new game :)
+    - EXIT GAME - to exit game  
 
 [Back to the top](#blackjack-game)
 
