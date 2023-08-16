@@ -1,6 +1,6 @@
-# **BlackJack Game**
+# **Blackjack Game**
 
-## This is a [Blackjack game](),
+## This is a [Blackjack Game](https://blackjack-game20-2cd616944bfc.herokuapp.com/),
 
 <p> This is a Blackjack game and is targeted for anyone that may want to challenge the dealer
 <p> The objective here is to beat the dealer
@@ -14,12 +14,17 @@
 
 ## **Content**
 
-- [**BlackJack Game**](#blackjack-game)
+- [**Blackjack Game**](#blackjack-game)
   - [User Experience](#user-experience)
   - [Design](#design)
     - [Typography](#typography)
     - [Features](#features)
-      - [Game]()
+      - [Username](#username-container)
+      - [Main Menu](#main-menu-container)
+      - [Instructions](#instructions-container)
+      - [Blackjack Game](#blackjack-game-container)
+      - [Game is Over](#game-is-over-container)
+      - [Exit Game](#exit-game)
   - [Programs and tools used](#programs-and-tools-used)
   - [Languages](#languages)
     - [Python](#python)  
@@ -49,7 +54,7 @@ Visitors:
 Goals:
 
 - The player will have to beat the dealer in order to win
-- You are suppose to have a BLackjack = 21 points or to have as close as possible to 21 points to beat the dealer
+- You are supposed to have a Blackjack = 21 points or to have as close as possible to 21 points to beat the dealer
 - If you lose play again to beat the dealer
 - The main goal is to have fun :)
 
@@ -57,13 +62,13 @@ The game:
 
 - Starting at the beginning with a page asking you to type your username
 - After entering your username, it will take you to a main menu with two options:
-    - INSTRUCTIONS -  to take you to the instructions menu
+    - INSTRUCTIONS - to take you to the instruction's menu
     - START - to start the Blackjack game  
-- If you select the instructions it will take you to another menu where instructions are displayed and two options to select:
+- If you select the instructions, it will take you to another menu where instructions are displayed and two options to select:
     - START - to start the game
     - EXIT - to take you back to main menu  
 - Once you start the game the dealer will give you and himself two cards, the second card from the dealer will be hidden until the game is over
-- The gamne will check for Blackjacks, if there is no Blackjack the game will continue
+- The game will check for Blackjacks, if there is no Blackjack the game will continue
 - Two options will be displayed:
     - HIT - to request another card
     - STAY - to check results
@@ -125,9 +130,10 @@ pip3 freeze > requirements.txt
 - #### Main Menu Container
 
     - Welcome message displayed to the player
-    - Two options displayed for the user to select
+    - Three options displayed for the user to select
         - Instructions
         - Start
+        - Exit Game
       <br>
 
       ![image](assets/images/readme/features/mainmenu.png)
@@ -135,9 +141,10 @@ pip3 freeze > requirements.txt
 - #### Instructions Container
 
     - Instructions displayed for the player to help understand the game
-    - Two options displayed for the user to select
+    - Three options displayed for the user to select
         - Start
-        - Exit
+        - Main Menu
+        - Exit Game
       <br>
 
       ![image](assets/images/readme/features/instructions.png)
@@ -154,13 +161,21 @@ pip3 freeze > requirements.txt
 
 - #### Game is Over Container
 
-    - Once the game is over, the winner is annouced
-    - Two options displayed for the user to select
+    - Once the game is over, the winner is announced
+    - Three options displayed for the user to select
         - Main Menu
         - Play Again
+        - Exit Game
       <br>
 
       ![image](assets/images/readme/features/gameisover.png)
+
+- #### Exit Game
+
+    - A thank you message is displayed
+      <br>
+
+      ![image](assets/images/readme/features/exitgame.png)
 
  
 
@@ -215,7 +230,6 @@ pip3 freeze > requirements.txt
 
 - The Blackjack game has been tested and it works on different types of computers with different browsers:
   - Chrome
-  - Safari
   - Microsoft Edge
   - Firefox
 - It has been tested and work on different mobile phone brands:
@@ -260,8 +274,8 @@ pip3 freeze > requirements.txt
 
 | Feature | Expected Outcome | Testing | Result | Pass or Fail |
 | --- | --- | --- | --- | --- |
-| Title | Welcome to instructions message to the player | Openned instructions | Welcome to instructions message with username in it displayed | pass |
-| Instructions | To display instructions for the player | Openned instructions | Instructions displayed | pass |
+| Title | Welcome to instructions message to the player | Opened instructions | Welcome to instructions message with username in it displayed | pass |
+| Instructions | To display instructions for the player | Opened instructions | Instructions displayed | pass |
 | Input | For user to type number 1 or 2 option | number 5 entered | 'Please select a number from the options:' message displayed | pass |
 | Input | For user to type number 1 or 2 option | Blank spaces entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
@@ -290,7 +304,7 @@ pip3 freeze > requirements.txt
 | Input | For user to type number 1 or 2 option | Blank spaces entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 or 2 option | letters entered | 'Invalid Input Entered' message displayed | pass |
 | Input | For user to type number 1 Main menu option | option 1 entered | value taken and go back to main menu | pass |
-| Input | For user to type number 2 Start again option | option 2 entered | value taken and Start the game again | pass |
+| Input | For user to type number 2 Start again option | option 2 entered | value taken and start the game again | pass |
 | Input | For user to type number 3 Exit Game option | option 3 entered | value taken and Exit Game | pass |
 
  <br>
@@ -302,7 +316,7 @@ pip3 freeze > requirements.txt
 ## Bugs
 
 - The game had a bug at the end where the score was being shown, the winner/loser message was being displayed duplicate
-    - I have moved the ```self.winnerCheck(cardDealerHand, userHand, gameOver=True)``` to after of the loop
+    - I have moved the ```self.winnerCheck(cardDealerHand, userHand, True)``` to after of the loop
 - 
     - 
 - 
@@ -338,7 +352,7 @@ pip3 freeze > requirements.txt
 #### Fork the repository
 
   1. Open Github.
-  2. Log in or Sign up.
+  2. Log in or sign up.
   3. Look for my repository [Blackjack](https://github.com/b1ndark/project3).
   4. Last on the right corner you will find the fork button(click on it).
 
@@ -347,7 +361,7 @@ pip3 freeze > requirements.txt
   1. Open Github
   2. Log in or Sign up
   3. Look for my repository [Blackjack](https://github.com/b1ndark/project3)
-  4. Look for code button next to the gitpod button at the top right(click on it).
+  4. Look for code button next to the Gitpod button at the top right(click on it).
   5. A window will pop up with options for you to select to clone it with such as HTTPS, SSH or GitHub CLI.
   6. Once selected copy the link that is shown.
   7. Open your code editor terminal.
@@ -356,11 +370,11 @@ pip3 freeze > requirements.txt
 
 #### Heroku deployment
 
-  1. Within your opened project in codeanywhere or gitpod you will have to freeze requirements.txt file  
+  1. Within your opened project in Codeanywhere or Gitpod you will have to freeze requirements.txt file  
     - Type the command "pip3 freeze > requirements.txt"
   2. Make sure you commit and push it
   3. Open and login to your Heroku account
-  4. Once your dashboard opens, on the top right hand corner click on New and than on the Create new app
+  4. Once your dashboard opens, on the top right-hand corner click on New and then on the Create new app
   5. Give your app a name and select the location
   6. Once created, the app dashboard will open.
   7. Select Settings tab
@@ -371,7 +385,7 @@ pip3 freeze > requirements.txt
   11. Go down to Deployment method and select GitHub
   12. Connect to your GitHub and enter the repository
   13. Once is connected you can either have automatic or manual deployment
-  14. Choose your prefered one by pressing deploy
+  14. Choose your preferred one by pressing deploy
 
 
 [Back to the top](#blackjack-game)
@@ -382,7 +396,7 @@ pip3 freeze > requirements.txt
 
 - ### Content
 
-    - To import colorama I have followed Python Package Index and also watched a tutorial on youtube to help me understand and learn, I will leave the links below:
+    - To import colorama I have followed Python Package Index and also watched a tutorial on Youtube to help me understand and learn, I will leave the links below:
       - [Python Package Index](https://pypi.org/project/colorama/)
       - [TechWithTim](https://www.youtube.com/watch?v=u51Zjlnui4Y&ab_channel=TechWithTim)
       
