@@ -185,13 +185,18 @@ pip3 freeze > requirements.txt
 
 ## Programs and tools used
 
-- [Codeanywhere](https://app.codeanywhere.com/) - To create the website.
+- [Codeanywhere](https://app.codeanywhere.com/) - To create the game.
 - [Github](https://github.com/) - Where the website is stored.
-- [Am I Responsive?](https://ui.dev/amiresponsive) - To display the website on different websites.
 - [Spell Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik/related) - To check spelling.
-- [Google Tools](https://developer.chrome.com/docs/devtools/) - to check website styling and responsiveness.
 - [Gyazo](https://gyazo.com/) - To take Screenshots.
-- [CI Python Linter](https://pep8ci.herokuapp.com/#) - To check for python code errors
+- [Cloud Convert](https://cloudconvert.com/) - To resize and convert screenshots.
+- [CI Python Linter](https://pep8ci.herokuapp.com/) - To check for python code errors.
+- [screen Pal](https://screenpal.com/) - To record the screen.
+- [Giphy](https://giphy.com/create/gifmaker) - To create gifs.
+- [Heroku](https://dashboard.heroku.com/apps) - To deploy the game.
+- [Code Institute P3 Template](https://github.com/Code-Institute-Org/p3-template) - To create project 3 template.
+- [Luci Chart](https://www.lucidchart.com/pages/) - To create the game diagram.
+- [Colorama](https://pypi.org/project/colorama/) - To import colours.
 
 [Back to the top](#blackjack-game)
 
@@ -237,6 +242,7 @@ pip3 freeze > requirements.txt
   - Xiaomi note 8
   - Hauwei p30 lite
   - Poco F5 pro
+  - Samsung S23
 - Tests were carry out by myself, friends and family, different devices from PCs, laptops, tablets to mobile phones.
 - All functions work as they should.
  <br>
@@ -316,13 +322,7 @@ pip3 freeze > requirements.txt
 ## Bugs
 
 - The game had a bug at the end where the score was being shown, the winner/loser message was being displayed duplicate
-    - I have moved the ```self.winnerCheck(cardDealerHand, userHand, True)``` to after of the loop
-- 
-    - 
-- 
-  - 
-- 
-  - 
+    - I have moved the ```self.winnerCheck(cardDealerHand, userHand, True)``` to after the loop
   <br>
 
 [Back to the top](#blackjack-game)
@@ -371,7 +371,7 @@ pip3 freeze > requirements.txt
 #### Heroku deployment
 
   1. Within your opened project in Codeanywhere or Gitpod you will have to freeze requirements.txt file  
-    - Type the command "pip3 freeze > requirements.txt"
+    - Type the command ```pip3 freeze > requirements.txt```
   2. Make sure you commit and push it
   3. Open and login to your Heroku account
   4. Once your dashboard opens, on the top right-hand corner click on New and then on the Create new app
