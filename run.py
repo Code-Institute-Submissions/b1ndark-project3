@@ -114,7 +114,10 @@ class cardsDeck:
             {"rank": "A", "value": 11},
         ]
 
-        ''' Append cardSelected(cardSuits and cardRanks) onto cards list 'cards = []' '''
+        '''
+        Append cardSelected(cardSuits and cardRanks)
+        onto cards list 'cards = []'
+        '''
         for cardSuit in cardSuits:
             for cardRank in cardRanks:
                 self.cards.append(cardSelected(cardSuit, cardRank))
@@ -198,6 +201,8 @@ class handCard:
         '''
         Function to display the cards and their total value
         displayDealersHiddenCard set to False by default until the game is over
+        Which in other words the second card from the cardDealer will be hidden
+        till the game is over
         '''
         if self.cardDealer is True:
             ''' If is cardDealer, it will print this '''
@@ -207,10 +212,6 @@ class handCard:
             print(f'  {USERNAME} your cards are:')
         ''' Will print each card called '''
         for index, card in enumerate(self.cards):
-            '''
-            If the game isn't over, 
-            the second card from the cardDealer will be hidden
-            '''
             if index == 1 and self.cardDealer and not\
                  displayDealersHiddenCard and not self.blackJack():
                 print("      🂠")
@@ -337,7 +338,7 @@ class blackJackGame:
 
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
         '''
-        This function will run through an if/else statement and 
+        This function will run through an if/else statement and
         will check for winner, whether is the cardDealer
         or the user, if there is a draw, blackjack and if someone has bust
         '''
