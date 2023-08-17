@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=mpL0Y01v6tY&ab_channel=CodeCoach
 https://www.youtube.com/watch?v=aryte85bt_M&t=140s&ab_channel=Beau%28previouslyZizyo%29
 The next video to help me with the game rules:
 https://www.youtube.com/watch?v=eyoh-Ku9TCI&ab_channel=wikiHow
-To import colorana:
+To import colorama:
 https://www.youtube.com/watch?v=u51Zjlnui4Y&ab_channel=TechWithTim
 '''
 
@@ -24,7 +24,7 @@ USERNAME = ""
 def clean():
     '''
     This function when called will clear screen
-    This is to improve User experience
+    This is to improve user experience
     '''
     os.system("clear")
 
@@ -33,7 +33,7 @@ def instructions():
     '''
     This function will open instructions
     User will find the instructions and be able to understand the game
-    There are two options Start/Exit
+    There are three options Start/Main Menu/Exit Game
     I have used Try/except to check if a number has been entered or not
     '''
     clean()
@@ -114,7 +114,7 @@ class cardsDeck:
             {"rank": "A", "value": 11},
         ]
 
-        ''' Append cardSuits and cardRanks onto cards list 'cards = []' '''
+        ''' Append cardSelected(cardSuits and cardRanks) onto cards list 'cards = []' '''
         for cardSuit in cardSuits:
             for cardRank in cardRanks:
                 self.cards.append(cardSelected(cardSuit, cardRank))
@@ -147,6 +147,10 @@ class cardsDeck:
 
 class handCard:
     def __init__(self, cardDealer=False):
+        '''
+        Empty cards list, value at start is set to 0
+        Default value of cardDealer is set to False
+        '''
         self.cards = []
         self.value = 0
         self.cardDealer = cardDealer
@@ -191,7 +195,10 @@ class handCard:
         return self.displayValue() == 21
 
     def display(self, displayDealersHiddenCard=False):
-        ''' Function to display the cards and their total value '''
+        '''
+        Function to display the cards and their total value
+        displayDealersHiddenCard set to False by default until the game is over
+        '''
         if self.cardDealer is True:
             ''' If is cardDealer, it will print this '''
             print(f'{"  Dealer cards are:"}')
@@ -200,12 +207,15 @@ class handCard:
             print(f'  {USERNAME} your cards are:')
         ''' Will print each card called '''
         for index, card in enumerate(self.cards):
+            '''
+            If the game isn't over, 
+            the second card from the cardDealer will be hidden
+            '''
             if index == 1 and self.cardDealer and not\
                  displayDealersHiddenCard and not self.blackJack():
                 print("      🂠")
             else:
                 print(card)
-        ''' Checks if isn't the cardDealer '''
         if not self.cardDealer:
             print("  Total value of:", self.displayValue())
 
@@ -219,8 +229,8 @@ class blackJackGame:
         The game will start with two cards dealt
         If there is no blackjack at the beginning,
         the user will be able to decide whether to hit or stay
-        At the end the user will be able to decide if wants to play again
-        or go back to main menu
+        At the end the user will be able to decide if wants to play again,
+        go back to main menu or exit game
         '''
         clean()
         print("*" * 80)
@@ -327,7 +337,8 @@ class blackJackGame:
 
     def winnerCheck(self, cardDealerHand, userHand, gameOver=False):
         '''
-        This function will check for winner, whether is the cardDealer
+        This function will run through an if/else statement and 
+        will check for winner, whether is the cardDealer
         or the user, if there is a draw, blackjack and if someone has bust
         '''
         if not gameOver:
@@ -367,8 +378,8 @@ class blackJackGame:
 
 def mainMenu():
     '''
-    Main Menu function where you will be able to select Instructions
-    Or start the game
+    Main Menu function where you will be able to select Instructions,
+    Start the game or Exit game
     While loop to loop through the try/except and if statements
     '''
     clean()
